@@ -1,0 +1,51 @@
+* {
+  color: rgb(191,215,234);
+}
+
+.wrapper {
+  width: 970px;
+  background-color: rgb(18,53,91);
+  padding: 1px;
+}
+
+.header, .nav, .content, .footer {
+  border-radius: 10px;
+  margin: 10px;
+  padding: 15px;
+}
+
+.header {
+  background-color: rgb(215,38,56);
+  font-size: 30px;
+}
+
+a {
+  text-decoration: underline;
+  color: rgb(82,222,229);
+}
+
+ul {
+  padding-left: 20px;
+}
+
+.nav {
+  color: white;
+  background-color: rgb(8,126,139);
+  display: inline-block;
+  vertical-align: top;
+}
+
+.content {
+  background-color: rgb(12,24,33);
+  display: inline-block;
+  width: 652px;
+  vertical-align: top;
+}
+
+.code {
+  color: rgb(118,134,213);
+}
+
+.footer {
+  background-color: rgb(92,102,114);
+}
