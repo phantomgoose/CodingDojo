@@ -1,0 +1,29 @@
+#wrapper{
+    background-color: rgb(214,209,177);
+    width: 710px;
+    height: 625px;
+    padding: 20px;
+}
+#header{
+    margin: auto;
+    width: 65%;
+}
+#title{
+    font-size: 30px;
+    font-weight: bold;
+}
+.white{
+    background-color: white;
+}
+.red{
+    background-color: rgb(252,100,113);
+    border: 3px solid black;
+    padding: 10px;
+    margin: 1px;
+}
+.blue{
+    background-color: rgb(119,182,234);
+    border: 3px solid black;
+    padding: 10px;
+    margin: 1px;
+}
