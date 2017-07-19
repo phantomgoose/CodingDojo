@@ -1,0 +1,123 @@
+* {
+    font-family: sans-serif;
+}
+
+.wrapper {
+  width: 1140px;
+  background-color: rgb(250,250,250);
+}
+
+.header {
+  margin: 0 20px 0 20px;
+}
+
+h1  {
+  /* why does this have to be comic sans ;_; */
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  display: inline-block;
+  width: 50%;
+}
+
+.header p {
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+  width: 50%;
+  text-align: right;
+}
+
+.content {
+  padding: 20px;
+  background: radial-gradient(circle, rgb(111,89,100), rgb(111,89,100), rgb(25,9,13));
+}
+
+#photo, .about, .La-Mode, .Family-Contacts, .fiveEleven {
+  display: inline-block;
+  margin: 15px;
+  vertical-align: top;
+}
+
+#photo {
+  width: 431px;
+  background-color: rgb(192,192,192);
+  padding: 5px;
+}
+
+.about, .La-Mode, .Family-Contacts, .fiveEleven {
+  background: linear-gradient(to right, white , rgb(218,203,217));
+}
+
+.La-Mode, .Family-Contacts, .fiveEleven, .screenshot{
+  width: 333px;
+}
+
+.La-Mode p, .Family-Contacts p, .fiveEleven p{
+  height: 160px;
+}
+
+.La-Mode img:not(.screenshot), .Family-Contacts img:not(.screenshot), .fiveEleven img:not(.screenshot){
+  width: 42px;
+  display: inline-block;
+}
+
+.about *:not(.screenshot):not(.button), .La-Mode *:not(.screenshot):not(.button), .Family-Contacts *:not(.screenshot):not(.button), .fiveEleven *:not(.screenshot):not(.button) {
+  padding: 10px;
+  margin: 0;
+}
+
+.button {
+  display: block;
+  color: white;
+  background-color: rgb(64,125,97);
+  border-radius: 8px;
+  margin: auto;
+  margin-bottom: 15px;
+  width: 40%;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 5px;
+  text-align: center;
+  box-shadow: 3px 3px 10px 0px black;
+}
+
+.about {
+  width: 594px;
+  height: 293px;
+}
+
+.about a {
+  color: black;
+}
+
+h2 {
+  background: linear-gradient(rgb(180,179,183), rgb(135,133,147), rgb(180,179,183));
+  color: white;
+}
+
+h3 {
+  background: linear-gradient(rgb(180,179,183), rgb(135,133,147), rgb(180,179,183));
+  color: white;
+  font-size: 17px;
+}
+
+.footer {
+  width: 50%;
+  margin: auto;
+}
+
+.footer p {
+  text-align: center;
+}
+
+.footer img {
+  width: 20px;
+  margin-right: 5px;
+  margin-left: 5px;
+  vertical-align: bottom;
+}
+
+.footer a {
+  font-style: italic;
+  color: black;
+}
