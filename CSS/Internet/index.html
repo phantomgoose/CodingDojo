@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Another CSS exercise. Making a web page about web pages.">
+  <link rel="stylesheet" type="text/css" href="css/master.css">
+  <title>CSS practice - The Internet</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <img src="img/globe.png" alt="globe"><h1>The Inter<span>net</span></h1>
+      <h2>The World Wide Web</h2>
+    </div>
+    <div class="lower">
+      <div class="sidebar">
+        <div class="resources">
+          <h3>So, what's an <span>Internet?</span></h3>
+          <p>An <span>Inter</span>connected <span>Net</span>work of computers all around the world!</p>
+          <p class="sidebar-button-blue">WATCH A VIDEO</p>
+          <p class="sidebar-button-orange">MORE RESOURCES</p>
+        </div>
+        <div class="ad">
+          <h2>Reinvent your career in just 14 weeks</h2>
+          <img src="img/ninja.png" alt="ninja">
+          <p class="sidebar-button-light-blue">Learn More <span class="arrow"></span><span class="arrow"></span><span class="arrow"></span></p>
+        </div>
+      </div>
+      <div class="content">
+        <div class="content-header">
+          <div class="home-button">
+            <img src="img/home.png" alt="home"><a href="#">DNS</a>
+          </div>
+          <div class="contact">
+            <img src="img/phone.png" alt="phone">
+            <div class="contact-info">
+              <p>Mon - Fri 9 a.m. - 5 p.m. (EST)</p>
+              <p>855.967.3787</p>
+              <p>International +1.617.963.0555</p>
+            </div>
+          </div>
+        </div>
+        <div class="main-content">
+          <div class="info">
+            <h2>Clients and Servers</h2>
+            <p>Computers connected to the <a href="#">Web</a> are called <span>clients</span> and <span>servers</span>.</p>
+            <ul>
+              <li><a href="#">Clients</a> are the typical Web user's Internet-connected devices (for example, your computer connected to your Wi-Fi, or your phone connected to your mobile network) and <a href="#">Web-Accessing software</a> available on those devices (usually a web browser like Firefox or Chrome).</li>
+              <li><a href="#">Servers</a> are computers that store <a href="#">webpages</a>, <a href="#">sites</a>, or <a href="#">apps</a>. When a client device wants to access a webpage, a copy of the webpage is downloaded from the server onto the client machine to be displayed in the user's web browser.</li>
+            </ul>
+          </div>
+          <img src="img/client_server.jpg" alt="client/server">
+          <div class="info">
+            <h2>So What Actually Happens?</h2>
+            <ol>
+              <li>The browser goes to the <a href="#">DNS server</a> and finds the real address of the <a href="#">server</a> that the website lives on.</li>
+              <li>The browser sends an <a href="#">HTTP request</a> message to the server asking it to send a copy of the website to the client.</li>
+              <li>If the server approves the client's request, the server sends the client a <a href="#">"200 OK" message</a>, which means "Permission granted! Here you go!", and then starts sending the website's files to the browser as a series of small chunks.</li>
+              <li>The browser assembles the small chunks into a complete website and displays it to you!</li>
+            </ol>
+          </div>
+        </div>
+        <div class="footer">
+          <img src="img/html.png" alt="html">
+          <div class="info">
+            <h2>The Big 3 - HTML, CSS, JavaScript</h2>
+            <p>While the server can process information in many different languages, the files that they serve to the client are <span>always</span> going to be some combination of HTML, CSS, and JavaScript!</p>
+            <p>Learn more about the Big 3 <a href="#">here</a>!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

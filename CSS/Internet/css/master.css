@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.wrapper {
+  width: 970px;
+}
+
+.header *{
+  display: inline-block;
+  font-family: sans-serif;
+}
+
+.header img {
+  width: 7%;
+  position: absolute;
+  top: 7px;
+}
+
+.header h1 {
+  font-size: 62px;
+  font-weight: normal;
+  color: dimgrey;
+  margin-left: 105px;
+  margin-top: 20px;
+}
+
+.header h2 {
+  display: block;
+  color: white;
+  background: linear-gradient(#2969A0, #5284AB, #2969A0);
+  padding: 10px;
+  font-weight: normal;
+  font-size: 40px;
+}
+
+.header span {
+  color: #24679E;
+}
+
+.lower {
+  background: linear-gradient(#E3E3E3,rgba(255, 255, 255, 0));
+  background-size: 970px 126px;
+  background-repeat: no-repeat;
+}
+
+.sidebar {
+  width: 223px;
+  display: inline-block;
+}
+
+.resources {
+  margin: 10px 5px;
+  border-bottom: solid 1.5px grey;
+  display: block;
+}
+
+.resources h3 {
+  margin: 10px 0px;
+}
+
+.resources h3 span {
+  color: #D9261F;
+}
+
+.resources p {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.resources p span {
+  color: #21659D;
+}
+
+p[class^="sidebar-button"] {
+  border-radius: 5px;
+  box-shadow: 1px 2px 2px 1px black;
+  padding: 5px 20px;
+  text-align: center;
+  color: white;
+  font-weight: normal;
+}
+
+.sidebar-button-blue {
+  background: linear-gradient(#6399C2,#22659D);
+}
+
+.sidebar-button-orange {
+  background: linear-gradient(#E8AB53,#EF7300);
+}
+
+.sidebar-button-light-blue {
+  background: linear-gradient(#77CFDE,#00C0DE);
+}
+
+.ad {
+  display: block;
+  background-size: 204%;
+  background-image: url("../img/ad_background.png");
+  padding: 20px 10px;
+  height: 271px;
+}
+
+.ad img{
+  width: 45%;
+  margin: 10px auto;
+  display: block;
+}
+
+.ad h2 {
+  color: white;
+  text-align: center;
+  font-weight: normal;
+}
+
+.arrow {
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 1px;
+  transform: rotate(-45deg);
+  vertical-align: middle;
+}
+
+.arrow:first-child {
+  opacity: .3;
+}
+
+.arrow:nth-child(2) {
+  opacity: .6;
+}
+
+.content {
+  width: 680px;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 62px;
+}
+
+.content-header {
+  border-bottom: solid 1.5px grey;
+  height: 56px;
+}
+
+.home-button {
+  display: inline-block;
+  width: 150px;
+  vertical-align: top;
+  margin-top: 6px;
+}
+
+.home-button img {
+  width: 10%;
+  vertical-align: top;
+}
+
+.home-button a {
+  text-decoration: none;
+  vertical-align: top;
+  width: 90%;
+  color: #21659D;
+}
+
+.contact {
+  display: inline-block;
+  width: 196px;
+  padding: 0 10px 10px 0;
+  vertical-align: top;
+  margin-left: 316px;
+}
+
+.contact img {
+  width: 16%;
+  display: inline-block;
+  margin: 0 6px 7px 1px;
+}
+
+.contact-info {
+  display: inline-block;
+  text-align: center;
+}
+
+.contact-info p:nth-child(odd) {
+  font-size: 10px;
+}
+
+.contact-info p:nth-child(2) {
+  color: #00BFDE;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.main-content img {
+  width: 37%;
+  margin: auto;
+  display: block;
+}
+
+.info {
+  margin: 5px 0;
+}
+
+.info * {
+  font-size: 14px;
+}
+
+.info p {
+  margin: 5px;
+}
+
+.info ul, .info ol {
+  margin: 10px;
+  margin-left: 38px;
+}
+
+.info h2 {
+  color: #21659D;
+  font-size: 20px;
+}
+
+.info span {
+  font-weight: bold;
+}
+
+.info a {
+  text-decoration: none;
+  color: #0099AF;
+}
+
+.footer {
+  display: block;
+  border: solid #0085DE thick;
+  padding: 10px;
+  border-bottom: none;
+}
+
+.footer img {
+  width: 19%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.footer .info {
+  width: 80%;
+  display: inline-block;
+}
+
+.footer .info span {
+  font-style: italic;
+  font-weight: normal;
+}
