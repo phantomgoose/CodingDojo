@@ -1,0 +1,187 @@
+* {
+  font-family: sans-serif;
+}
+
+.wrapper {
+  width: 970px;
+}
+
+.content {
+  background-color: rgb(38,81,117);
+  padding: 5px;
+  padding-left: 40px;
+}
+
+.header img {
+  width: 40%;
+}
+
+.menu {
+  display: inline-block;
+  color: white;
+  font-size: 12px;
+  margin-left: 260px;
+  vertical-align: top;
+}
+
+.menu p {
+  margin-left: 80px;
+}
+
+.menu a {
+  color: rgb(200,171,7);
+}
+
+.menu span {
+  color: black;
+}
+
+.searchbox {
+  padding: 15px 40px;
+  background-color: rgb(68,68,68);
+  border-radius: 10px;
+  box-shadow: 1px 2px 2px 1px black;
+}
+
+#searchfield {
+  text-align: center;
+  color: grey;
+  border-top: 2px solid grey;
+  border-left: 2px solid grey;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  box-shadow: 2px 2px 5px 0px black;
+  height: 30px;
+}
+
+#searchfield-go {
+  background-color: rgb(38,81,117);
+  color: white;
+  border-radius: 5px;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid grey;
+  border-bottom: 2px solid grey;
+  box-shadow: 2px 2px 5px 0px black;
+  padding: 6px 8px;
+}
+
+.nav {
+  margin: 20px 40px 20px 40px;
+  background-color: rgb(73,127,171);
+  border-radius: 5px;
+  box-shadow: 1px 2px 2px 1px black;
+  padding: 10px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 48px;
+  margin-right: 10px;
+  font-size: 18px;
+  text-align: justify;
+}
+
+.sidebar {
+  display: inline-block;
+  margin: 20px;
+  vertical-align: top;
+  height: 100%;
+}
+
+.sidebar ul {
+  list-style-position: inside;
+  padding: 0;
+}
+
+.sidebar ul li {
+  color: white;
+  margin: 10px 10px 10px 35px;
+  text-align: center;
+}
+
+.sidebar ul li a{
+  color: white;
+  font-size: 18px;
+}
+
+.about {
+  margin: 10px;
+  display: inline-block;
+  width: 61%;
+  color: white;
+  text-align: center;
+  vertical-align: top;
+  font-size: 13px;
+}
+
+.quote {
+  color: rgb(255,211,67);
+  font-style: italic;
+  font-size: 16px;
+}
+
+.quote h3 {
+  color: white;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.useful-info {
+  padding: 10px 20px 10px 60px;
+}
+
+.getting-started, .applications {
+  margin: 10px;
+  padding: 10px 60px 10px 10px;
+  border-top: thick solid rgb(117,168,211);
+  display: inline-block;
+  width: 39%;
+  vertical-align: top;
+  text-align: center;
+}
+
+.getting-started ul, .applications ul {
+  list-style-type: square;
+}
+
+.getting-started a, .applications a {
+  text-decoration: none;
+  color: rgb(117,168,211);
+}
+
+.getting-started h3, .applications h3 {
+  margin: 0;
+}
+
+.getting-started p, .applications p {
+  margin: 5px;
+}
+
+.getting-started ul, .applications ul {
+  margin: 0;
+}
+
+.footer {
+  background: linear-gradient(rgb(39,82,118), rgb(55,118,171));
+  color: rgb(137,186,227);
+  padding: 40px 100px 10px 100px;
+}
+
+.footer a{
+  text-align: center;
+  color: rgb(137,186,227);
+  text-decoration: none;
+  margin-left: 70px;
+  font-size: 17px;
+}
+
+.copyright {
+  font-size: 8px;
+  width: 11%;
+  margin: auto;
+  margin-top: 10px;
+}
