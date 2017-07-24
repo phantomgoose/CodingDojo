@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript">
+
+  "use strict";
+
+  //returns a number from a to b (inclusive)
+  function roll(a, b){
+    var result = Math.floor(Math.random()*(b-a+1)) + a;
+    console.log("rolled a", result);
+    return result;
+  }
+
+  function gamble(quarters, play_until = Infinity){
+    while (quarters > 0 && quarters < play_until){ //playing until we either run out of quarters or have more quarters than needed
+      if (roll(1,100) < 100){ //failure condition
+        quarters--;
+        console.log("Sorry! Better luck next time. You now have", quarters, "quarters.");
+      }
+      else { //victory condition
+        console.log("Jackpot!");
+        var winnings = roll(50,100);
+        quarters += winnings;
+        console.log("Won", winnings, "quarters. You now have", quarters, "quarters.");
+      }
+    }
+    // now we're either broke or have more money than needed
+    if (quarters === 0){
+      console.log("Oh no, looks like you have no money left. Better luck next time, buddy.");
+    }
+    else if (quarters >= play_until){
+      console.log("Nice, looks like you have at least", play_until, "quarter(s) now. Better stop playing before you lose it all.");
+    }
+    else {
+      console.log("Something went horribly wrong. Current quarter value:", quarters);
+    }
+  }
+
+  gamble(100,200);
+
+  </script>
+</body>
+</html>

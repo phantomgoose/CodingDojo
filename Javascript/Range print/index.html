@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript">
+  function printRange(from, to = null, skip = 1) {
+    if (to === null) {
+      to = from;
+      from = 0;
+    }
+
+    var total_count = (to - from) / skip;
+
+    if (total_count < 0) {
+      total_count *= -1;
+    }
+
+    var current_number = from;
+    var count = 0;
+
+    while (count < total_count) {
+      console.log(current_number);
+      current_number += skip;
+      count++;
+    }
+  }
+
+  printRange(2,10,1);
+  console.log("done");
+  printRange(2,10,2);
+  console.log("done");
+  printRange(10,1,-1);
+  console.log("done");
+  printRange(4,8);
+  console.log("done");
+  printRange(4);
+  console.log("done");
+  </script>
+</body>
+</html>
