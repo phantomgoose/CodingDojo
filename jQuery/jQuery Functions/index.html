@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script
+  src="https:code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <link rel="stylesheet" href="master.css">
+  <title></title>
+</head>
+<body>
+  <header>
+    <!-- on load fade in, then fade out -->
+    <h1>Glorious jQuery test page</h1>
+    <!-- click -->
+    <button id="nav_toggle" type="button" name="button">toggle nav</button>
+    <!-- slidetoggle -->
+    <nav>
+      <button class="navbutton" href="#">nav1</button>
+      <button class="navbutton" href="#">nav2</button>
+      <button class="navbutton" href="#">nav3</button>
+      <button class="navbutton" href="#">nav4</button>
+    </nav>
+    <!--  hide/show -->
+    <button id="hide_content" type="button" name="button">hide content</button>
+    <button id="show_content" type="button" name="button">show content</button>
+  </header>
+  <!-- slide down -->
+  <main>
+    <!-- slide up -->
+    <h2>these are some test paragraphs. click to make me disappear briefly!</h2>
+    <!-- text -->
+    <p>.text test paragraph</p>
+    <!-- html -->
+    <p>.html test paragraph</p>
+    <!-- button to add class to the paragraphs and another button to manipulate class -->
+    <button id="add_class_to_p" type="button" name="button">add a class to paragraphs</button>
+    <button id="add_before_p" type="button" name="button">add some text before that class</button>
+    <button id="add_after_p" type="button" name="button">add some text after that class</button>
+    <!-- attr -->
+    <button id="get_button_type" type="button" name="button">what class do those nav links belong to?</button>
+    <select name="coolness_selector">
+      <option value="not cool">not cool</option>
+      <option value="pretty cool">pretty cool</option>
+      <option value="pretty dang awesome">pretty dang awesome</option>
+    </select>
+    <!-- val -->
+    <button id="val_button" type="button" name="button">what did we just select?</button>
+    <!-- data -->
+    <button id="store" type="button" name="button">let's store the above selection in main</button>
+    <button id="load" type="button" name="button">now let's see what this page thinks about your selection</button>
+    <span></span>
+    <button id="end_it" type="button" name="button">press here to hide/unhide stuff for the nth time</button>
+    <p>These are the methods we need to test: </p>
+  </main>
+  <footer>
+    <ul>
+      <li id="click">.click</li>
+      <li id="hide">.hide</li>
+      <li id="show">.show</li>
+      <li id="toggle">.toggle</li>
+      <li id="slideDown">.slideDown</li>
+      <li id="slideUp">.slideUp</li>
+      <li id="slideToggle">.slideToggle</li>
+      <li id="fadeIn">.fadeIn</li>
+      <li id="fadeOut">.fadeOut</li>
+      <li id="addClass">.addClass</li>
+      <li id="before">.before</li>
+      <li id="after">.after</li>
+      <li id="append">.append</li>
+      <li id="html">.html</li>
+      <li id="attr">.attr</li>
+      <li id="val">.val</li>
+      <li id="text">.text</li>
+      <li id="data">.data</li>
+    </ul>
+  </footer>
+</body>
+</html>

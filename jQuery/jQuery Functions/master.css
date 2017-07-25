@@ -1,0 +1,32 @@
+body {
+  background: lightgrey;
+}
+
+button {
+  background: darkred;
+  color: white;
+  border: thin solid black;
+  border-radius: 2px;
+  padding: 5px;
+  margin: 5px;
+}
+
+nav {
+  background: #efeeee;
+}
+
+.navbutton {
+  background: orange;
+  color: black;
+  border: thin solid white;
+}
+
+ul li{
+  color: white;
+  background: red;
+}
+
+span {
+  font-weight: bold;
+  font-size: 40px;
+}
