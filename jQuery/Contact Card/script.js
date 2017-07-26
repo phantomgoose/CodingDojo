@@ -26,6 +26,20 @@ $(document).ready(function(){
     return result;
   }
 
+  function generateGitHubInfo(){
+    var username = $("input[name=username]").val();
+    var url = "https://api.github.com/users/" + username;
+    $.getJSON(url, function(data){
+      var name = data.name;
+      var description = data.bio;
+      var result = {
+        html : "<div class='contact-card'><h2>" + name + "</h2><p>Hover for description!</p></div>",
+        storedInfo : description
+      }
+      appendContactCardDiv(result);
+    });
+  }
+
   //temporarily stores html contents of a card, then swaps them with the stored contents (initially description)
   function swapContactCardData(card){
     var temp = card.html();
@@ -33,8 +47,13 @@ $(document).ready(function(){
     card.data("storedInfo", temp);
   }
 
-  $("form").submit(function(){
+  $("#name_form").submit(function(){
     appendContactCardDiv(generateContactCardDiv());
+    return false;
+  });
+
+  $("#github_form").submit(function(){
+    generateGitHubInfo();
     return false;
   });
 

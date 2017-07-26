@@ -9,21 +9,29 @@
 </head>
 <body>
   <div class="wrapper">
-    <form action="index.html" method="post">
-      <div class="name-form">
-        <label for="first-name">First name:</label>
-        <input type="text" name="first-name" value="">
-      </div>
-      <div class="name-form">
-        <label for="last-name">Last name:</label>
-        <input type="text" name="last-name" value="">
-      </div>
-      <div class="description-form">
-        <label for="description">Description:</label>
-        <textarea name="description"></textarea>
-      </div>
-      <input type="submit" name="submit" value="Add User">
-    </form>
+    <aside class="forms">
+      <form id="name_form" action="index.html" method="post">
+        <p>This form creates a contact card based on the below input.</p>
+        <div class="name-form">
+          <label for="first-name">First name:</label>
+          <input type="text" name="first-name" value="">
+        </div>
+        <div class="name-form">
+          <label for="last-name">Last name:</label>
+          <input type="text" name="last-name" value="">
+        </div>
+        <div class="description-form">
+          <label for="description">Description:</label>
+          <textarea name="description"></textarea>
+        </div>
+        <input type="submit" name="submit" value="Add User">
+      </form>
+      <form id="github_form" action="index.html" method="post">
+        <p>This form creates a contact card based on a person's GitHub username.</p>
+        <input type="text" name="username" value="Username">
+        <input type="submit" name="submit" value="Search for user">
+      </form>
+    </aside>
     <main>
     </main>
   </div>
