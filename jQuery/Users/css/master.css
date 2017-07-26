@@ -1,0 +1,27 @@
+table tr th {
+  padding: 5px 10px 5px 5px;
+}
+
+table:not(:first-child) * {
+  border: thin solid grey;
+}
+
+table tr:first-child th {
+  font-weight: bold;
+}
+
+table:first-child {
+  border: 2px solid black;
+}
+
+.form-container {
+  width: 300px;
+}
+
+h1 {
+  border-bottom: thick solid black;
+}
+
+form * {
+  display: inline-block;
+}
