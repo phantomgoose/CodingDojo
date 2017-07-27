@@ -1,0 +1,20 @@
+.wrapper {
+  width: 900px;
+}
+
+header {
+  background: black;
+  box-sizing: content-box;
+}
+
+img {
+  width: 212px;
+  vertical-align: middle;
+  display: inline-block;
+  margin: 5px;
+}
+
+main {
+  background: black;
+  color: white;
+}

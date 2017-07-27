@@ -1,0 +1,19 @@
+.wrapper {
+  width: 610px;
+}
+
+.pokeman_pictures {
+  width: 600px;
+}
+
+.pokeman_info {
+  width: auto;
+  height: auto;
+  position: fixed;
+  border: thick solid black;
+  padding: 20px;
+}
+
+.pokeman_info, .pokeman_pictures {
+  display: inline-block;
+}
