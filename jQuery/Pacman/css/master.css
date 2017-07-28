@@ -1,0 +1,94 @@
+body{
+  background-color: black;
+  margin: 0;
+}
+div.row{
+  height: 20px;
+}
+div.row div{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+div.brick{
+  background: url("../img/Wall.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+div.coin{
+  background: url("../img/Coin.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+div.cherry{
+  background: url("../img/Cherry.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+div.empty{
+}
+div#pacman{
+  background: url("../img/Pacman.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  transform: rotate(0);
+}
+div#pacman2{
+  background: url("../img/Pacman.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  transform: rotate(0);
+}
+div#blue-ghost{
+  background: url("../img/Blue_ghost.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  transform: rotate(0);
+}
+div#orange-ghost{
+  background: url("../img/Orange_ghost.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  transform: rotate(0);
+}
+div#score{
+  border:1px solid white;
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  color: white;
+  padding: 7px;
+  position: absolute;
+  top: 10px;
+  left: 410px;
+}
+div#lives{
+  border:1px solid white;
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  color: white;
+  padding: 7px;
+  position: absolute;
+  top: 50px;
+  left: 410px;
+}
