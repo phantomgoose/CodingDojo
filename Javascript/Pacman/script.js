@@ -63,12 +63,6 @@ function displayWorld(){
   document.getElementById("world").innerHTML = output;
 }
 
-// function displayPacman(){
-//   document.getElementById("pacman").style.top = pacman.y*20+"px";
-//   document.getElementById("pacman").style.left = pacman.x*20+"px";
-//   document.getElementById("pacman").style.transform = "rotate("+pacman.angle+"deg)";
-// }
-
 function displayUnit(unit){
   document.getElementById(unit.name).style.top = unit.y*20+"px";
   document.getElementById(unit.name).style.left = unit.x*20+"px";
@@ -265,7 +259,6 @@ document.onkeydown = function(e){
   }
 
   randomMove(orange_ghost);
-  console.log(orange_ghost);
   randomMove(blue_ghost);
 
   updateWorld();
