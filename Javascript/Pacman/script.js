@@ -157,7 +157,6 @@ function updateWorld(){
     default:
     break;
   }
-  world[pacman.y][pacman.x] = 0;
   displayWorld();
   displayAllUnits();
 }
@@ -216,19 +215,45 @@ function randomMove(unit){
   let randir = random(1,4);
   switch (randir) {
     case 1:
-    move(unit,"right");
+    if (!wallCollisionCheck(unit, "right")){
+        move(unit,"right");
+    } else {
+      randomMove(unit);
+    }
     break;
     case 2:
-    move(unit,"left");
+    if (!wallCollisionCheck(unit, "left")){
+        move(unit,"left");
+    } else {
+      randomMove(unit);
+    }
     break;
     case 3:
-    move(unit,"up");
+    if (!wallCollisionCheck(unit, "up")){
+        move(unit,"up");
+    } else {
+      randomMove(unit);
+    }
     break;
     case 4:
-    move(unit,"down");
+    if (!wallCollisionCheck(unit, "down")){
+        move(unit,"down");
+    } else {
+      randomMove(unit);
+    }
     break;
     default:
     break;
+  }
+}
+
+//loss condition
+function checkForLoss(){
+  if (unitCollisionCheck(pacman, orange_ghost) || unitCollisionCheck(pacman, blue_ghost)){
+    lives--;
+    updateWorld();
+    displayLives();
+    alert("you lost!");
   }
 }
 
@@ -245,24 +270,21 @@ document.onkeydown = function(e){
   else if (e.keyCode == 40){
     move(pacman, "down");
   }
-
-  //loss condition
-  if (unitCollisionCheck(pacman, orange_ghost) || unitCollisionCheck(pacman, blue_ghost)){
-    lives--;
-    displayLives();
-    alert("you lost!");
+  else {
+    return; // do nothing if some other button was pressed
   }
+
+  displayScore();
+  updateWorld();
+  checkForLoss();
+
+  randomMove(orange_ghost);
+  randomMove(blue_ghost);
+  updateWorld();
+  checkForLoss();
 
   //win condition
   if (collected_coin_cherry == total_coin_cherry){
     alert("you won!");
   }
-
-  randomMove(orange_ghost);
-  randomMove(blue_ghost);
-
-  updateWorld();
-  displayUnit(pacman);
-  displayScore();
-  displayLives();
 }
