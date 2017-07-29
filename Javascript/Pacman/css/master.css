@@ -79,7 +79,7 @@ div#score{
   padding: 7px;
   position: absolute;
   top: 10px;
-  left: 410px;
+  left: 810px;
 }
 div#lives{
   border:1px solid white;
@@ -90,5 +90,5 @@ div#lives{
   padding: 7px;
   position: absolute;
   top: 50px;
-  left: 410px;
+  left: 810px;
 }
