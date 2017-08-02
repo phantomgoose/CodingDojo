@@ -27,13 +27,19 @@ class Product(object):
         return self
 
     def displayInfo(self):
-        print("Price: ", self.price)
-        print("Name: ", self.name)
-        print("Weight: ", self.weight)
-        print("Brand: ", self.brand)
-        print("Cost: ", self.cost)
-        print("Status: ", self.status)
+        print "Price: ", self.price
+        print "Name: ", self.name
+        print "Weight: ", self.weight
+        print "Brand: ", self.brand
+        print "Cost: ", self.cost
+        print "Status: ", self.status
         return self
 
-p = Product(9.99, "shoe", "1lbs", "mike", 5.99)
-p.displayInfo()
+    def __repr__(self):
+        return "<Product object. Price: {}, name: {}, weight: {}, brand: {}, cost: {}, status: {}>".format(self.price, self.name, self.weight, self.brand, self.cost, self.status)
+
+if __name__ == "__main__":
+    p = Product(9.99, "shoe", "1lbs", "mike", 5.99)
+    b = Product(10.25, "pants", "100lbs", "test_brand", 1123.12)
+    p.addTax(.2).sell().returnProduct("defective").displayInfo()
+    print p

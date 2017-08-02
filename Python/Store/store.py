@@ -57,14 +57,26 @@ class Store(object):
             p.displayInfo()
         return self
 
-p = Product(9.99, "shoe", "1lbs", "mike", 5.99)
-b = Product(10.25, "pants", "100lbs", "test_brand", 1123.12)
-p.addTax(.2).sell().returnProduct("defective")
+    def listInventory(self):
+        res = "["
+        for p in self.products:
+            res += p.name + " "
+        return res + "]"
 
-s = Store([p,b], "Bellevue", "Alex")
+    def __repr__(self):
+        return "<Store object. Products: {}, location: {}, owner: {}>".format(self.listInventory(), self.location, self.owner)
 
-s.add_product(Product(20.5, "jacket", "20lbs", "another_test_brand", 2))
-print "first inventory"
-s.inventory()
-print "second inventory"
-s.remove_product("shoe").inventory()
+if __name__ == "__main__":
+
+    p = Product(9.99, "shoe", "1lbs", "mike", 5.99)
+    b = Product(10.25, "pants", "100lbs", "test_brand", 1123.12)
+    p.addTax(.2).sell().returnProduct("defective")
+
+    s = Store([p,b], "Bellevue", "Alex")
+
+    s.add_product(Product(20.5, "jacket", "20lbs", "another_test_brand", 2))
+    print "first inventory"
+    s.inventory()
+    print "second inventory"
+    s.remove_product("shoe").inventory()
+    print s

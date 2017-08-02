@@ -36,6 +36,15 @@ class Hospital(object):
             patient.info()
         return self
 
+    def infoList(self):
+        res = ""
+        for p in self.patients:
+            res += p.name + " "
+        return res
+
+    def __repr__(self):
+        return "<Hospital object. Name: {}, capacity: {}, patients: {}>".format(self.name, self.capacity, self.infoList())
+
 class Patient(object):
     def __init__(self, pat_id, name, allergies=[], bed=None):
         self.id = pat_id
@@ -47,21 +56,36 @@ class Patient(object):
         print "Patient's name is", self.name, "and they are in bed", self.bed
         return self
 
-h = Hospital("Overlake", 5)
-p = Patient(1, "Alex")
-p2 = Patient(2, "Bob")
-p3 = Patient(3, "Gary")
-p4 = Patient(4, "Bobberson")
-p5 = Patient(5, "Alice")
-h.admit(p)
-h.admit(p2)
-h.admit(p3)
-h.admit(p4)
-h.info()
-print "discharging Bob"
-h.discharge(p2)
-h.info()
-print "admitting Alice"
-h.admit(p5)
-h.info()
-#great success, alice is in bob's bed now (insert 13-year-old joke here)
+    def allergyList(self):
+        res = ""
+        if len(self.allergies) > 0:
+            for a in self.allergies:
+                res += a + " "
+        else:
+            res = "None"
+        return res
+
+    def __repr__(self):
+        return "<Patient object. ID: {}, name: {}, allergies: {}, bed: {}>".format(self.id, self.name, self.allergyList(), self.bed)
+
+if __name__ == "__main__":
+
+    h = Hospital("Overlake", 5)
+    p = Patient(1, "Alex")
+    p2 = Patient(2, "Bob")
+    p3 = Patient(3, "Gary")
+    p4 = Patient(4, "Bobberson")
+    p5 = Patient(5, "Alice")
+    h.admit(p)
+    h.admit(p2)
+    h.admit(p3)
+    h.admit(p4)
+    h.info()
+    print "discharging Bob"
+    h.discharge(p2)
+    h.info()
+    print "admitting Alice"
+    h.admit(p5)
+    h.info()
+    print p5
+    #great success, alice is in bob's bed now (insert 13-year-old joke here)

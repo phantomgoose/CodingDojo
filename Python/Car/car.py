@@ -1,9 +1,6 @@
 import random
 import math
 
-def randomize(a, b):
-    return int(math.floor(random.random()*(b-a+1)))+a
-
 class Car(object):
     def __init__(self, price, speed, fuel, mileage):
         self.price = price
@@ -29,6 +26,14 @@ class Car(object):
         else:
             return "Invalid fuel amount"
 
-cars = []
-for i in range(6):
-    cars.append(Car(randomize(5000,15000), randomize(50,100), randomize(0,12), randomize(0, 250000)))
+    def __repr__(self):
+        return "<Car object. Price: {}, speed: {}, fuel: {}, mileage: {}>".format(self.price, self.speed, self.fuel, self.mileage)
+
+if __name__ == "__main__":
+
+    def randomize(a, b):
+        return int(math.floor(random.random()*(b-a+1)))+a
+
+    cars = []
+    for i in range(6):
+        cars.append(Car(randomize(5000,15000), randomize(50,100), randomize(0,12), randomize(0, 250000)))

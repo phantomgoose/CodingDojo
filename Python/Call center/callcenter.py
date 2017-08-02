@@ -30,6 +30,13 @@ class CallCenter(object):
             print "Caller's name", c.name, "; Caller's phone number:", c.number, "; Total queue size:", self.queue
         return self
 
+    def infoList(self):
+        res = ""
+        for c in self.calls:
+            res += str(c.call_id) + " "
+        return res
+
+
     def findRemove(self, phone_number):
         for i in range(len(self.calls)):
             if self.calls[i].number == phone_number:
@@ -42,12 +49,18 @@ class CallCenter(object):
         self.calls.sort(key=getCallTime)
         return self
 
-c = Call(12, "Alex", 152196519561, 3, "you guys suck")
-b = Call(13, "Bob", 4535434354343, 1, "you guys don't suck")
+    def __repr__(self):
+        return "<CallCenter object. Calls in queue (by id): {}, queue size: {}>".format(self.infoList(), self.queue)
 
-cs = CallCenter([c, b])
-cs.add(Call(14, "bijojiboj", 453453443535, 2, "i suck")).info().sortCalls().info()
-# print "removing first member"
-# cs.remove().info()
-# print "removing member with phone number 12312313112313"
-# cs.findRemove(12312313112313).info()
+if __name__ == "__main__":
+
+    c = Call(12, "Alex", 152196519561, 3, "you guys suck")
+    b = Call(13, "Bob", 4535434354343, 1, "you guys don't suck")
+
+    cs = CallCenter([c, b])
+    cs.add(Call(14, "bijojiboj", 453453443535, 2, "i suck")).info().sortCalls().info()
+    # print "removing first member"
+    # cs.remove().info()
+    # print "removing member with phone number 12312313112313"
+    # cs.findRemove(12312313112313).info()
+    print cs
