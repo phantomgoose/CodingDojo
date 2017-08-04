@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{{url_for('static', filename='css/master.css')}}" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Counter</h1>
+        <h4>{{session["counter"]}} times</h4>
+        <form action="/add2" method="post">
+            <input type="submit" name="add2" value="Counter +2">
+        </form>
+        <form action="/reset" method="post">
+            <input type="submit" name="reset" value="Reset">
+        </form>
+    </body>
+</html>

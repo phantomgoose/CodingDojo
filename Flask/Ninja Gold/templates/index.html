@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='css/master.css') }}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            Your Gold: <span>{{ current_gold }}</span><form action="/reset">
+                <input type="submit" name="reset" value="Restart">
+            </form>
+        </header>
+        <main>
+            <div class="location">
+                <h2>Farm</h2>
+                <p>(earn 10-20 gold)</p>
+                <form action= "/process_money" method="post">
+                    <input type="hidden" name="building" value="farm">
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div class="location">
+                <h2>Cave</h2>
+                <p>(earn 5-10 gold)</p>
+                <form action= "/process_money" method="post">
+                    <input type="hidden" name="building" value="cave">
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div class="location">
+                <h2>House</h2>
+                <p>(earn 2-5 gold)</p>
+                <form action= "/process_money" method="post">
+                    <input type="hidden" name="building" value="house">
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div class="location">
+                <h2>Casino</h2>
+                <p>(earn/lose 0-50 gold)</p>
+                <form action= "/process_money" method="post">
+                    <input type="hidden" name="building" value="casino">
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+        </main>
+        <footer>
+            <p>Activity log:</p>
+            <div class="log">
+                {{ log | safe }}
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

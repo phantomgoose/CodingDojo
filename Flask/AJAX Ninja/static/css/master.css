@@ -1,0 +1,23 @@
+.wrapper {
+  width: 1000px;
+}
+button {
+  display: inline-block;
+  border: thin solid black;
+  color: white;
+}
+#red {
+  background: red;
+}
+#orange {
+  background: orange;
+}
+#blue {
+  background: blue;
+}
+#purple {
+  background: purple;
+}
+img {
+  width: 200px;
+}

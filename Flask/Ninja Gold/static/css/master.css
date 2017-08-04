@@ -1,0 +1,43 @@
+.wrapper{
+    width: 800px;
+    background: lightgray;
+}
+main div{
+    display: inline-block;
+    width: 93px;
+    border: thick solid black;
+    font-size: 12px;
+    padding: 5px;
+    height: 120px;
+    vertical-align: top;
+    text-align: center;
+}
+main div p{
+    height: 32px;
+}
+.log{
+    overflow: auto;
+    border: thick solid black;
+}
+header{
+    padding: 5px;
+}
+header span{
+    border: thick solid black;
+    width: 50px;
+    display: inline-block;
+    text-align: right;
+}
+header form{
+    display: inline-block;
+    margin-left: 10px;
+}
+.log p{
+    margin: 5px;
+}
+.gained_gold{
+    color: green;
+}
+.lost_gold{
+    color: red;
+}

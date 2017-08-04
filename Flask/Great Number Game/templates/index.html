@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Welcome to the Great Number Game!</h1>
+        <h6>I am thinking of a number between 1 and 100</h6>
+        <h6>Take a guess!</h6>
+        <form action="/guess" method="post">
+            <input type="text" name="guess" value="" {{ hide }}>
+            <input type="submit" name="submit" value="{{ button }}">
+        </form>
+        <p>{{ guess_result }}</p>
+    </body>
+</html>
