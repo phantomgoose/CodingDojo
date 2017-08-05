@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Registration form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        form input{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/process" method="post">
+        Your email: <input type="text" name="email" value="">
+        Your first name: <input type="text" name="first_name" value="">
+        Your last name: <input type="text" name="last_name" value="">
+        Your password: <input type="password" name="password" value="">        Confirm password: <input type="password" name="password_c" value="">
+        Your birthday (mm/dd/yy): <input type="text" name="birthday" value="">
+        <input type="submit" name="submit" value="Submit">
+    </form>
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <div class="errors">
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    {% endwith %}
+</body>
+
+</html>

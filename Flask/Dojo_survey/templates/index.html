@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>Dojo survey</title>
 </head>
+
 <body>
   <form class="" action="/process" method="post">
     Your Name: <input type="text" name="name" value="">
@@ -22,7 +24,17 @@
     Comment (optional):
     <p></p>
     <textarea name="comment" rows="8" cols="80"></textarea>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    {% endwith %}
     <input type="submit" name="submit" value="Submit">
   </form>
 </body>
+
 </html>
