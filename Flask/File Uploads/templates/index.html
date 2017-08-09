@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <h1>Upload File:</h1>
+    <form enctype='multipart/form-data' action="/result" method="post">
+        <input type="file" name="fileupload" value="">
+        <p></p>
+        <input type="submit" name="submit" value="Submit">
+    </form>
+    {% with messages = get_flashed_messages() %}
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+    {% endwith %}
+</body>
+
+</html>
