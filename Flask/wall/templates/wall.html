@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/master.css') }}">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h4>CodingDojo Wall</h4>
+            <span>Welcome, {{ name }}!</span>
+            <form action="/logout" method="POST">
+                <input type="submit" name="submit" value="log off">
+            </form>
+        </header>
+        <main>
+            <div class="post">
+                <h3>Post a message</h3>
+                <form action="/post_message" method="POST">
+                    <textarea name="message"></textarea>
+                    <input type="submit" name="submit" value="Post a message">
+                </form>
+                {% with flashed_messages = get_flashed_messages() %} {% if flashed_messages %} {% for flashed_message in flashed_messages
+                %}
+                <p>{{ flashed_message }}</p>
+                {% endfor %} {% endif %} {% endwith %}
+            </div>
+            <div class="messages">
+                {% if messages %} {% for message in messages %} {{ message | safe }} {% endfor %} {% endif %}
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
