@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, flash, redirect, session
 from connection import MySQLConnection
 import os, binascii, md5, re
+from datetime import datetime
 
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 PASSWORD_REGEX = re.compile(r'(?=.*[0-9].*)(?=.*[A-Z].*)')
@@ -104,6 +105,7 @@ def wall():
     user_query = "SELECT * FROM users WHERE users.id = :id LIMIT 1"
     query_data = {'id': session['user_id']}
     user = mysql.query_db(user_query, query_data)
+    logged_user_name = user[0]['first_name']
 
     #get all messages from the db, convert them to a list of html entries
     messages_query = mysql.query_db("SELECT * FROM messages ORDER BY created_at")
@@ -115,6 +117,11 @@ def wall():
 
         #not adding suffixes to days for now
         html = "<div class = 'message'><h3>{} - {}</h3><p>{}</p></div>".format(name, message['created_at'].strftime("%B %d %Y"), message['message'])
+
+        #add a delete button, if the message was posted by the currently logged in user AND it was created less than 30 minutes ago
+        time_diff = datetime.now() - message['created_at']
+        if message['user_id'] == session['user_id'] and time_diff.seconds < 1800:
+            html += "<form class='delete' action='/delete_message' method='POST'><input type='hidden' name='message_id' value={}><input type='submit' name='submit' value='Delete message - CANNOT BE UNDONE!'></form>".format(message['id'])
 
         #find all comments associated with the message
         comments_query = mysql.query_db("SELECT * FROM comments WHERE message_id = {} ORDER BY created_at DESC".format(message['id']))
@@ -131,7 +138,7 @@ def wall():
 
         processed_messages.append(html)
 
-    return render_template('wall.html', name=user[0]['first_name'], messages=processed_messages)
+    return render_template('wall.html', name=logged_user_name, messages=processed_messages)
 
 @app.route('/logout', methods=['POST'])
 def logout():
@@ -165,6 +172,11 @@ def post_comment():
     comments_query = "INSERT INTO comments (comment, created_at, updated_at, user_id, message_id) VALUES (:comment, NOW(), NOW(), :user_id, :message_id)"
     query_data = {'comment': comment, 'user_id': session['user_id'], 'message_id': message_id}
     mysql.query_db(comments_query, query_data)
+    return redirect('/wall')
+
+@app.route('/delete_message', methods=['POST'])
+def delete_message():
+    mysql.query_db("DELETE FROM messages WHERE messages.id = {}".format(request.form['message_id']))
     return redirect('/wall')
 
 app.run(debug=True)
