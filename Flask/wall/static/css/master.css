@@ -50,3 +50,11 @@ textarea{
     margin-left: 50px;
     border-radius: 10px;
 }
+.error{
+    border: thick solid red;
+    color: red;
+    background: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+}

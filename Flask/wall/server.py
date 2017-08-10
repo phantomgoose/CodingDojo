@@ -50,6 +50,9 @@ def register():
     if not PASSWORD_REGEX.match(password):
         errors.append(
             "Your password is too weak. It must contain at least one upper case letter and at least one number.")
+    #make sure an account with that email doesnt already exist
+    if mysql.query_db("SELECT * FROM users WHERE users.email = '{}' LIMIT 1".format(email)):
+        errors.append("A user with this email already exists.")
     # if there are any errors at all, flash them and redirect back to root
     if len(errors) > 0:
         for error in errors:
