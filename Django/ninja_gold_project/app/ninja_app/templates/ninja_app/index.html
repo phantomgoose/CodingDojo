@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> {% load static %}
+    <link rel="stylesheet" href="{% static 'ninja_app/css/master.css' %}">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <p>Your gold:</p><span>{{ request.session.gold }}</span>
+            <form action="/ninja/reset" method="POST">
+                {% csrf_token %}
+                <input type="submit" value="Reset">
+            </form>
+        </header>
+        <main>
+            <div class="location">
+                <h4>Farm</h4>
+                <p>(earn 10-20 gold)</p>
+                <form action="ninja/process_gold/farm" method="POST">
+                    {% csrf_token %}
+                    <input type="submit" value="Visit the farm">
+                </form>
+            </div>
+            <div class="location">
+                <h4>Cave</h4>
+                <p>(earn 5-10 gold)</p>
+                <form action="ninja/process_gold/cave" method="POST">
+                    {% csrf_token %}
+                    <input type="submit" value="Visit the cave">
+                </form>
+            </div>
+            <div class="location">
+                <h4>Forest</h4>
+                <p>(earn 2-5 gold)</p>
+                <form action="ninja/process_gold/forest" method="POST">
+                    {% csrf_token %}
+                    <input type="submit" value="Visit the forest">
+                </form>
+            </div>
+            <div class="location">
+                <h4>Casino</h4>
+                <p>(earn/lose 0-50 gold)</p>
+                <form action="ninja/process_gold/casino" method="POST">
+                    {% csrf_token %}
+                    <input type="submit" value="Visit the casino">
+                </form>
+            </div>
+        </main>
+        <footer>
+            {{ request.session.log | safe }}
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+.wrapper{
+    width: 512px;
+    padding: 5px;
+    background: lightgray;
+}
+header{
+    padding: 5px;
+    margin: 5px;
+}
+header span{
+    border: thick solid black;
+    padding: 5px;
+    min-width: 50px;
+    height: 14px;
+    text-align: right;
+}
+header *{
+    display: inline-block;
+    margin: 5px;
+    vertical-align: bottom;
+}
+.location{
+    display: inline-block;
+    width: 110px;
+    border: thick solid black;
+    font-size: 12px;
+    padding: 5px;
+    height: 120px;
+    vertical-align: top;
+    text-align: center;
+}
+.location p{
+    height: 32px;
+}
+footer{
+    border: thin solid black;
+}
+.gained_gold{
+    color: green;
+}
+.lost_gold{
+    color: red;
+}

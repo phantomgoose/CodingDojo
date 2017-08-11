@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <p>Random Word (# of attempts: {{ attempt_count }})</p>
+        <div class="random-word">
+            {{ random_word }}
+        </div>
+        <form action="/random_word" method="POST">
+            {% csrf_token %}
+            <input type="submit" name="submit" value="Generate">
+        </form>
+        <form action="/reset" method="POST">
+            {% csrf_token %}
+            <input type="submit" name="submit" value="Reset">
+        </form>
+    </body>
+</html>

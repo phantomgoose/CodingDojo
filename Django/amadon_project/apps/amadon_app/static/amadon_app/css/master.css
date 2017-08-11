@@ -1,0 +1,13 @@
+table *{
+    margin: 5px;
+}
+table th{
+    border: thin solid black;
+    width: 120px;
+}
+table tr:first-child{
+    background: lightgray;
+}
+table tr th:nth-child(3) *{
+    display: inline-block;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Survey Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="wrapper">
+        <p>Thanks for submitting this form! You have submitted this form {{ request.session.counter }} times now.</p>
+        <main>
+            <h2>Submitted information</h2>
+            <p>Name: <span>{{ request.session.name }}</span></p>
+            <p>Dojo Location: <span>{{ request.session.location }}</span></p>
+            <p>Favorite Language: <span>{{ request.session.language }}</span></p>
+            <p>Comment: <span>{{ request.session.comment }}</span></p>
+        </main>
+        <a href="/surveys">Back</a>
+    </div>
+</body>
+
+</html>
