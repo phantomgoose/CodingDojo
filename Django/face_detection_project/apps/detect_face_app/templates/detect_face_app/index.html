@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Face detection test using OpenCV</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+    </head>
+    <body>
+        <p>Upload a picture to check for a face (.png images only)</p>
+        <form action="/file_upload" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="file">
+            <input type="submit" name="" value="Upload">
+        </form>
+        <p>Or paste url:</p>
+        <form action="/remote_file_upload" method="POST">
+            {% csrf_token %}
+            <input type="text" name="url" value="">
+            <input type="submit" name="" value="Upload">
+        </form>
+        <p>Can adjust face detection settings here:</p>
+        <form action="/check_pic" method="POST">
+            {% csrf_token %}
+            <label for="scale_factor">Scale factor (default 1.2):</label>
+            <input type="number" name="scale_factor" value="1.2" step="0.01" min="1.01" max="10"><br>
+            <label for="min_neighbors">Minimum neighbors (default 5):</label>
+            <input type="number" name="min_neighbors" value="5" min="0"><br>
+            <label for="min_size">Minimum size (default 30):</label>
+            <input type="number" name="min_size" value="30" min="10" max="1000"><br>
+            <input type="submit" name="" value="Find faces">
+        </form>
+        <!-- horribly insecure use of user uploaded files -->
+        <p>Original image:</p>
+        <img src="{% get_media_prefix %}image.png" alt="" width="300px">
+        {% if request.session.faces_found %}
+        <p>Result:</p>
+        <img src="{% static 'detect_face_app/result.png' %}" alt="" width="300px">
+        {% else %}
+        <p>Looks like there's no face :(</p>
+        {% endif %}
+    </body>
+</html>
