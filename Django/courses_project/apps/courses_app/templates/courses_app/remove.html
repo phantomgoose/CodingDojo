@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Are you sure you want to delete the following course?</h1>
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td>{{ course.name }}</td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td>{{ course.description.content }}</td>
+            </tr>
+        </table>
+        <a href="{% url 'index' %}"><button type="button">No</button></a>
+        <a href="{% url 'destroy_course' course_id=course.id %}"><button type="button">Yes! I want to delete this</button></a>
+    </body>
+</html>

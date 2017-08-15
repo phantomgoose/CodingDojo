@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <h1>Users</h1>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Created At</th>
+            <th>Actions</th>
+        </tr>
+        {% if users %}
+        {% load tz %}
+        {% localtime on %}
+            {% for user in users %}
+                <tr>
+                    <th>{{ user.id }}</th>
+                    <th>{{ user.first_name }} {{ user.last_name }}</th>
+                    <th>{{ user.email }}</th>
+                    <th>{{ user.created_at }}</th>
+                    <th><a href="{% url 'show_user' id=user.id %}">Show</a> <a href="{% url 'edit_user' id=user.id %}">Edit</a> <a href="{% url 'delete_user' id=user.id %}">Delete</a></th>
+                </tr>
+            {% endfor %}
+            {% endlocaltime %}
+        {% endif %}
+    </table>
+    <a href="{% url 'new_user' %}">Add a new user</a>
+</body>
+
+</html>

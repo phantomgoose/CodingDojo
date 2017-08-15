@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> {% load static %}
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="{% static 'courses_app/js/script.js' %}"></script>
+</head>
+
+<body>
+    {% load tz %}
+    <div class="add_course">
+        <h3>Add a new course</h3>
+        <form action="/courses/create" method="POST">
+            {% csrf_token %}
+            <p>Name: <input type="text" name="name" value=""></p>
+            <p>Description: <input type="textfield" name="description" value=""></p>
+            <input type="submit" name="" value="Add">
+        </form>
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    <div class="course_table">
+        <h3>Courses</h3>
+        <table>
+            <tr>
+                <th>Course Name</th>
+                <th>Description</th>
+                <th>Date Added</th>
+                <th>Actions</th>
+            </tr>
+            {% for course in courses %}
+            <tr>
+                <td>{{ course.name }}</td>
+                <td>{{course.description.content}}</td>
+                <td>{{course.created_at|localtime}}</td>
+                <td><a href="{% url 'remove_course' course_id=course.id %}">Remove</a> <a class="toggle_comments">Show comments</a></td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="comments" hidden>
+                        {% for comment in course.comments.all %}
+                        <p>{{comment.content}}</p>
+                        {% endfor %}
+                        <form action="/courses/create_comment/{{course.id}}" method="POST">
+                            {% csrf_token %}
+                            <input type="textfield" name="comment" value="">
+                            <input type="submit" name="" value="Add comment">
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>

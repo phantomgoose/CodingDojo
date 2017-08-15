@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Edit User {{ user.id }}</h1>
+        <form method="POST" action="/users/{{ user.id }}">
+            {% csrf_token %}
+            <p>First name</p>
+            <input type="text" name="first_name" value="{{ user.first_name }}">
+            <p>Last name</p>
+            <input type="text" name="last_name" value="{{ user.last_name }}">
+            <p>Email</p>
+            <input type="text" name="email" value="{{ user.email }}">
+            <input type="submit" name="" value="Update">
+        </form>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li class="{{ message.tags }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <a href="{% url 'index' %}">Home</a> <a href="{% url 'show_user' id=user.id %}">Show</a> <a href="{{ request.META.HTTP_REFERER }}">Go back</a>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        {% load tz %}
+        <h1>User {{ id }}</h1>
+        <p>Full name: {{ full_name }}</p>
+        <p>Email: {{ email }}</p>
+        <p>Created on: {{ created_at|localtime }}</p>
+        <a href="{% url 'index' %}">Home</a> <a href="{% url 'edit_user' id=id %}">Edit</a> | <a href="{% url 'delete_user' id=id %}">Delete</a>
+    </body>
+</html>
