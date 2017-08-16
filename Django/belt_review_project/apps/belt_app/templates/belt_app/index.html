@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Welcome</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load static %}
+        <link rel="stylesheet" type="" href="{% static 'belt_app/css/master.css' %}">
+    </head>
+    <body>
+        <h1>Registration</h1>
+        <form action="users/register" method="POST">
+            {% csrf_token %}
+            <p>Name: <input type="text" name="name" value=""></p>
+            <p>Alias: <input type="text" name="alias" value=""></p>
+            <p>Email: <input type="text" name="email" value=""></p>
+            <p>Password: <input type="password" name="password" value=""></p>
+            <p>* Password should be at least 8 characters and must contain at least one capital letter, at least one number, and at least one non-letter character.</p>
+            <p>Confirm password: <input type="password" name="cpassword" value=""></p>
+            <input type="submit" name="" value="Register">
+        </form>
+        {% for message in messages %}
+            {% if 'registration' in message.tags %}
+                <p class="error_message">* {{ message }}</p>
+            {% endif %}
+        {% endfor %}
+        <h1>Login</h1>
+        <form action="users/login" method="POST">
+            {% csrf_token %}
+            <p>Email: <input type="text" name="email" value=""></p>
+            <p>Password: <input type="password" name="password" value=""></p>
+            <input type="submit" name="" value="Login">
+        </form>
+        {% for message in messages %}
+            {% if 'login' in message.tags %}
+                <p class="error_message">* {{ message }}</p>
+            {% endif %}
+        {% endfor %}
+    </body>
+</html>

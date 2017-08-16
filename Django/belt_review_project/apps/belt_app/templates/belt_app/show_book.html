@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Add Book and Review</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <header>
+            <a href="{% url 'index' %}">Home</a> <a href="{% url 'logout' %}">Logout</a>
+        </header>
+        {% load tz %}
+        <h3>{{ book.title }}</h3>
+        <p>Author: {{ book.author.name }}</p>
+        <form action="/reviews/create" method="POST">
+            {% csrf_token %}
+            <h3>Add a Review</h3>
+            <input type="hidden" name="book_id" value="{{ book.id }}">
+            <input type="textfield" name="review" value="">
+            <h3>Rating: </h3><input type="number" name="rating" value="5" min="1" max="5">
+            <input type="submit" name="" value="Submit Review">
+        </form>
+        <h3>Reviews:</h3>
+        {% for review in reviews %}
+        <p>Rating: {{ review.score }}</p>
+        <p><a href="/users/{{ review.user.id }}">{{ review.user.alias }}</a> says: {{ review.content }}</p>
+        <p>Posted on {{ review.created_at | localtime }}</p>
+        {% if request.session.user_id == review.user.id %}
+        <a href="/books/{{ book.id }}/reviews/delete/{{ review.id }}">Delete this review</a>
+        {% endif %}
+        {% endfor %}
+    </body>
+</html>

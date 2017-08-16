@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Books Home</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        {% load tz %}
+        <header>
+            <h3 style="display:inline-block">Welcome, {{ request.session.alias }}!</h3> <a href="{% url 'books_add' %}">Add Book and Review</a> <a href="{% url 'logout' %}">Logout</a>
+        </header>
+        <h3>Recent Book Reviews:</h3>
+        {% for review in recent_reviews %}
+            <h3><a href="/books/show/{{ review.book.id }}">{{ review.book.title }}</a></h3>
+            <p>Rating: {{ review.score }}</p>
+            <p><a href="/users/{{ review.user.id }}">{{ review.user.alias }}</a> says: {{ review.content }}</p>
+            <p>Posted on {{ review.created_at | localtime }}</p>
+        {% endfor %}
+        <h3>All Books with Reviews:</h3>
+        {% for book in books_with_reviews %}
+            <p><a href="/books/show/{{ book.id }}">{{ book.title }}</a></p>
+        {% endfor %}
+    </body>
+</html>
