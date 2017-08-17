@@ -1,0 +1,17 @@
+table {
+    width: 100%;
+}
+.container-fluid .row:first-child{
+    border-bottom: 4px solid black;
+}
+.hero-unit {
+    background: lightgray;
+    border: 4px solid gray;
+    padding: 5px;
+}
+.row {
+    margin-bottom: 10px;
+}
+.errors{
+    color: red;
+}

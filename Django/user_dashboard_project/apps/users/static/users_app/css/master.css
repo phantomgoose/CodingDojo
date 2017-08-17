@@ -1,0 +1,42 @@
+.container-fluid .row:first-child{
+    border-bottom: 4px solid black;
+}
+.hero-unit {
+    background: lightgray;
+    border: 4px solid gray;
+    padding: 5px;
+}
+.row {
+    margin-bottom: 10px;
+}
+.errors{
+    color: red;
+}
+.notifications{
+    color: green;
+}
+.user_message{
+    border: thin solid black;
+    padding: 5px;
+}
+.user_comment{
+    margin-left: 40px;
+    border: thin solid black;
+    padding: 5px;
+}
+.post_comment{
+    margin-left: 40px;
+}
+.pull-right{
+    float: right !important;
+}
+.post_message{
+    width: 100%;
+    height: 5em;
+}
+table{
+    width: 100%;
+}
+.nav li{
+    margin-left: 5px;
+}

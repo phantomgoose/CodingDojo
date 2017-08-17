@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Register</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+    {% load static %}
+    <link rel="stylesheet" type="" href="{% static 'users_app/css/master.css' %}">
+</head>
+
+<body>
+    {% load tz %}
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-1"></div>
+            <div class="col-3">
+                <h3>Users app</h3>
+            </div>
+            <div class="col-2">
+                <ul class="nav nav-pills">
+                    <li class="active"><a href="{% url 'dashboard-index' %}">Dashboard</a></li>
+                    <li><a href="{% url 'users-edit' %}">Profile</a></li>
+                </ul>
+            </div>
+            <div class="col"></div>
+            <div class="col-1">
+                <ul class="nav nav-pills">
+                    <li><a href="{% url 'users-logout' %}">Log off</a></li>
+                </ul>
+            </div>
+            <div class="col-1"></div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-1"></div>
+            <div class="col">
+                <h3>{{ user.first_name }} {{ user.last_name }}</h3>
+            </div>
+            <div class="col-1"></div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-1"></div>
+            <div class="col-5">
+                <table>
+                    <tr>
+                        <td>Registered at:</td>
+                        <td>{{ user.created_at | localtime }}</td>
+                    </tr>
+                    <tr>
+                        <td>User ID:</td>
+                        <td>#{{ user.id }}</td>
+                    </tr>
+                    <tr>
+                        <td>Email address:</td>
+                        <td>{{ user.email }}</td>
+                    </tr>
+                    <tr>
+                        <td>Description:</td>
+                        <td>{{ user.description }}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-5"></div>
+            <div class="col-1"></div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-1"></div>
+            <div class="col">
+                <h3>Leave a message for {{ user.first_name }}</h3>
+                <form action="{% url 'users-create-message' user_id=user.id %}" method="POST">
+                    {% csrf_token %}
+                    <input type="textfield" class="post_message" name="message" value="">
+                    <input class="btn btn-primary pull-right" type="submit" name="" value="Post">
+                </form>
+                {% if messages %}
+                <ul class="errors">
+                    {% for message in messages %} {% if 'message' in message.tags %}
+                    <li>{{ message }}</li>
+                    {% endif %} {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            <div class="col-1"></div>
+        </div>
+        {% for user_message in user_messages %}
+        <div class="row align-items-center">
+            <div class="col-1"></div>
+            <div class="col">
+                <p><a href="{% url 'users-show' user_id=user_message.from_user.id %}">{{ user_message.from_user.first_name }} {{ user_message.from_user.last_name }}</a> wrote<span class="pull-right">{{ user_message.created_at | timesince }} ago</span></p>
+                <p class="user_message">{{ user_message.content }}</p>
+                {% for comment in user_message.comments.all %}
+                <p><a href="{% url 'users-show' user_id=comment.from_user.id %}">{{ comment.from_user.first_name }} {{ comment.from_user.last_name }}</a> wrote <span class="pull-right">{{ comment.created_at | timesince }} ago</span></p>
+                <p class="user_comment">{{ comment.content }}</p>
+                {% endfor %}
+                <div class="post_comment">
+                    <form action="{% url 'users-create-comment' message_id=user_message.id user_id=user.id %}" method="POST">
+                        {% csrf_token %}
+                        <input type="text" name="comment" placeholder="Leave a comment" value="">
+                        <input class="btn btn-primary" type="submit" name="" value="Post">
+                    </form>
+                    {% if messages %}
+                    <ul class="errors">
+                        {% for message in messages %}
+                            {% if user_message.id|slugify in message.tags %}
+                                <li>{{ message }}</li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-1"></div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
