@@ -6,7 +6,7 @@ from ..users.models import User
 from ..users.functions import setPST, login_required
 from django.utils.decorators import method_decorator
 
-# Create your views here.
+#displays the user dashboard. Admin flag is passed to the template, which adjusts its presentation depending on user's privileges
 class DashboardIndex(View):
     @method_decorator(login_required)
     def get(self, request):
@@ -21,6 +21,7 @@ class DashboardIndex(View):
         }
         return render(request, 'dashboard_app/dashboard_index.html', context)
 
+#main redirect
 class DashboardRedirect(View):
     def get(self, request):
         return redirect(reverse('dashboard-index'))
