@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <script>
+        function Car(){
+            var testvar = [1,2];
+            this.get = function(){
+                return testvar;
+            }
+        }
+        var bleh = new Car();
+        console.log(bleh.get());
+        var x = bleh.get();
+        for (let i = 0; i < x.length; i++){
+            x[i] *= 2;
+        }
+        console.log(x);
+        console.log(bleh.get());
+    </script>
+</body>
+
+</html>

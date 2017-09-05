@@ -1,0 +1,36 @@
+<html>
+
+<head></head>
+
+<body>
+
+</body>
+<script>
+    function zero_negativity(arr) {
+        for (let i = 0; i < arr.length; i++){
+            if (arr[i] < 0){
+                return false;
+            }
+        }
+        return true;
+    }
+    console.log(zero_negativity([1,2,3,-4]));
+    function is_even(x) {
+        return x % 2 === 0;
+    }
+    console.log(is_even(3));
+    function create_dummy_array(n) {
+        let res = [];
+        for (let i = 0; i < n; i++){
+            res[i] = Math.floor(Math.random()*10);
+        }
+        return res;
+    }
+    console.log(create_dummy_array(5));
+    function random_choice(arr) {
+        return arr[Math.floor(Math.random()*arr.length)];
+    }
+    console.log(random_choice([1,2,3]));
+</script>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+</body>
+<script>
+    class Deck {
+        constructor() {
+            this.deck = Deck.generateDeck();
+            this.shuffle();
+        }
+        shuffle() {
+            let shuffled_cards = 0;
+            let random_card = 0;
+            var temp_card;
+            for (let i = 0; i < this.deck.length; i++) {
+                // store curren card temporarily
+                temp_card = this.deck[i];
+                // generate a random card index out of remaining cards
+                random_card = Math.floor(Math.random() * (this.deck.length - shuffled_cards) + shuffled_cards);
+                // swap in a random value
+                this.deck[i] = this.deck[random_card];
+                // swap the temp card into that position
+                this.deck[random_card] = temp_card;
+                // incremenet shuffled cards counter
+                shuffled_cards++;
+            }
+            return this;
+        }
+        reset() {
+            this.deck = Deck.generateDeck();
+            return this;
+        }
+        deal() {
+            // assume the deck is shuffled already
+            return this.deck.pop();
+        }
+        static generateDeck() {
+            let suits = ['spades', 'diamonds', 'hearts', 'clubs'];
+            let card_values = [];
+            let deck = [];
+            // generate list of card values
+            // 1 is ace, 13 is king
+            for (let i = 1; i < 14; i++) {
+                card_values.push(i);
+            }
+            // generate the deck (unshuffled)
+            for (let suit_idx in suits) {
+                let suit = suits[suit_idx];
+                for (let card_idx in card_values) {
+                    deck.push({
+                        suit: suit,
+                        card: card_values[card_idx]
+                    });
+                }
+            }
+            return deck;
+        }
+    }
+
+    class Player {
+        constructor(name) {
+            this.name = name;
+            this.hand = [];
+        }
+        draw(deck) {
+            this.hand.push(deck.deal());
+            return this;
+        }
+        discard() {
+            this.hand.pop();
+            return this;
+        }
+    }
+
+    function testShuffle(deck) {
+        let test_index = 33;
+        let test_suits = {
+            hearts: 0,
+            clubs: 0,
+            diamonds: 0,
+            spades: 0
+        };
+        let test_values = [];
+        for (let i = 1; i < 14; i++) {
+            test_values.push({
+                count: 0
+            });
+        }
+        for (let i = 0; i < 1000000; i++) {
+            deck.shuffle();
+            test_suits[deck.deck[test_index].suit]++;
+            test_values[deck.deck[test_index].card - 1].count++;
+        }
+        console.log(test_suits);
+        console.log(test_values);
+    }
+
+    let new_deck = new Deck();
+    let player = new Player('Alex');
+    player.draw(new_deck).draw(new_deck);
+    console.log(player.hand);
+    console.log(new_deck);
+
+</script>
+
+</html>
