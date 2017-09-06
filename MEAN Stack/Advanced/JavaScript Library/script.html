@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+</body>
+<script>
+    var _ = {
+        map: function (list, func) {
+            for (let idx in list){
+                list[idx] = func(list[idx]);
+            }
+            return list;
+        },
+        reduce: function (list, func, memo=undefined) {
+            for (let idx = 0; idx < list.length; idx++){
+                if (memo === undefined && idx === 0){
+                    memo = list[0];
+                    continue;
+                }
+                memo = func(memo, list[idx]);
+            }
+            return memo;
+        },
+        find: function (list, func) {
+            for (let i = 0; i < list.length; i++){
+                if (func(list[i])){
+                    return list[i];
+                }
+            }
+            return undefined;
+        },
+        filter: function (list, func) {
+            let res = [];
+            for (let i = 0; i < list.length; i++){
+                if (func(list[i])){
+                    res.push(list[i]);
+                }
+            }
+            return res;
+        },
+        reject: function (list, func) {
+            let res = [];
+            for (let i = 0; i < list.length; i++){
+                if (!func(list[i])){
+                    res.push(list[i]);
+                }
+            }
+            return res;
+        }
+    }
+    var evens = _.filter([1, 2, 3, 4, 5, 6], function (num) { return num % 2 == 0; });
+    var test = _.map([1,2,3], function(x){ return x * 3; });
+    var sum = _.reduce([1, 2, 3], function(memo, num){ return memo + num; }, 10);
+    console.log(_.find([1,2,3], x => x > 2));
+    console.log(evens);
+    console.log(test);
+    console.log(sum);
+
+</script>
+
+</html>

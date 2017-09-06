@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+</head>
+
+<body>
+    <div id='my_name'></div>
+</body>
+<script>
+    let promise = new Promise(function (resolve, reject) {
+        let data = $.get({
+            url: 'https://api.github.com/users/phantomgoose',
+            dataType: 'json'
+        });
+        if (data) {
+            resolve(data);
+        }
+        else {
+            reject(Error('Did not receive a response from GitHub'));
+        }
+    });
+    promise.then(function(data){
+        $('#my_name').html(data.name);
+    }, function(error){
+        console.log(error);
+    });
+    // $.get({
+    //     url: 'https://api.github.com/users/phantomgoose',
+    //     dataType: 'json',
+    //     success: function(data){
+    //         $('#my_name').html(data.name);
+    //     }
+    // });
+
+</script>
+
+</html>

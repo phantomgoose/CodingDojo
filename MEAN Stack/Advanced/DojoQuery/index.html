@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="test1">click me</div>
+    <div id="test2">hover over me</div>
+</body>
+<script>
+    $Dojo("test1").click(function () { console.log("The button was clicked!") });
+    $Dojo("test2").hover(function () { console.log("The button was hovered on!") }, function () { console.log("The button was hovered off of!") });
+
+</script>
+
+</html>
