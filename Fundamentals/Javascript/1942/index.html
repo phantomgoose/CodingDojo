@@ -1,0 +1,81 @@
+<html>
+<head>
+	<title>1942 Game</title>
+
+<style type="text/css">
+	body{
+		background-color:black;
+	}
+	#container{
+		background: url('background2.jpg');
+		width:825px;
+		height:550px;
+	}
+	#hero{
+		background: url('1942.gif');
+		background-position: -85px -180px;
+		width:28px;
+		height:28px;
+		position:absolute;
+	}
+	.enemy1{
+		background: url('1942.gif');
+		background-position: -31px -4px;
+		width:28px;
+		height:28px;
+		position:absolute;
+		transform: rotate(180deg);
+	}
+	.enemy2{
+		background: url('1942.gif');
+		background-position: -63px -6px;
+		width:28px;
+		height:28px;
+		position:absolute;
+		transform: rotate(180deg);
+	}
+	.bullet{
+		background: url('1942.gif');
+		background-position: -185px -400px;
+		width:18px;
+		height:18px;
+		position:absolute;
+	}
+	.explosion{
+		background: url('1942.gif');
+		background-position: -144px -32px;
+		width:28px;
+		height:28px;
+		position:absolute;
+	}
+	#score{
+		position:absolute;
+		border:10px solid red;
+		top:20px;
+		left:835px;
+		background-color:white;
+		padding:10px;
+		font-size:30px;
+		font-family: Arial;
+	}
+</style>
+</head>
+<body>
+	<div id='container'>
+		<div id='hero'></div>
+		<div id='enemies'></div>
+		<div id='bullets'></div>
+	</div>
+
+	<div id='score'></div>
+
+	<script type="text/javascript" src="script.js">
+	</script>
+
+
+<script>
+
+</script>
+
+</body>
+</html>

@@ -1,1 +1,0 @@
-A simple website that lets you upload or link an image and then attempts to find faces in said image via OpenCV
