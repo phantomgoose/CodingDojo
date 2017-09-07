@@ -39,7 +39,7 @@ function routeRequest(url, go_to_root=false) {
             route.type = 'js';
             break;
         case 'view':
-            route.filename = re_match.content.join('-') + '.html';
+            route.filename = re_match.content.join('_') + '.html';
             route.type = 'html'
             break;
         default:
