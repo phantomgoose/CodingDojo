@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <form action="/result" method="post">
+            <input type="hidden" name="_csrf" value="<%= csrf_token %>">
+            Your Name: <input type="text" name="name"></br>
+            Dojo Location <select name="location">
+                <option value="seattle">Seattle</option>
+                <option value="san_jose">San Jose</option>
+                <option value="mars">Mars</option>
+            </select></br>
+            Favorite Language: <select name="language">
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+                <option value="c#">C#</option>
+            </select></br>
+            Comment (optional):</br>
+            <textarea name="comment" cols="30" rows="10"></textarea></br>
+            <input type="submit" value="submit">
+        </form>
+    </body>
+</html>

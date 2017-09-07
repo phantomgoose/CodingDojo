@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    </head>
+    <body>
+        <h1>Welcome to the Great Number Game!</h1>
+        <p>I am thinking of a random number between 1 and 100</p>
+        <p>Answer is <%= answer %> (for testing purposes)</p>
+        <p>Take a wild guess:</p>
+        <form id="guess_button" action="#" method="post">
+            <input type="hidden" name="_csrf" value="<%= csrf_token %>">
+            <input type="number" name="guess">
+            <input type="submit" value="submit">
+        </form>
+        <div id="result"></div>
+    </body>
+    <script>
+        $(document).ready(() => {
+            $('#guess_button').submit(() => {
+                $.ajax({
+                    type: 'POST',
+                    url: '/guess',
+                    data: $('#guess_button').serialize(),
+                    success: (response) => {
+                        switch (response.result){
+                            case 'low':
+                                $('#result').html('Too low').addClass('wrong');
+                                break;
+                            case 'high':
+                                $('#result').html('Too high').addClass('wrong');
+                                break;
+                            case 'correct':
+                                $('#result').html('Just right').addClass('right');
+                                $('#guess_button').slideToggle().parent().append(
+                                    "<a href='/reset'>Play again</a>"
+                                );
+                                break;
+                            default:
+                                console.log('got unknown response from server');
+                                break;
+                        }
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+</html>

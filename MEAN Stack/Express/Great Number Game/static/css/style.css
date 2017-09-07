@@ -1,0 +1,14 @@
+.wrong {
+    background: red;
+}
+.right {
+    background: green;
+}
+.wrong, .right {
+    display: inline-block;
+    color: white;
+    border: thin solid black;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+}
