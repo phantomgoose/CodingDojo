@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Edit Rabbit</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <form action="/rabbits/<%= rabbit._id %>" method="post">
+            Rabbit name: <input type="text" name="name" value="<%= rabbit.name %>"></br>
+            Rabbit color: <input type="text" name="color" value="<%= rabbit.color %>"></br>
+            Rabbit picture: <input type="text" name="pic" value="<%= rabbit.pic %>"></br>
+            <input type="submit" value="Update">
+        </form>
+        <form action="/rabbits/destroy/<%= rabbit._id %>" method="post">
+        <input type="submit" value="Delete"></form>
+        <a href="/">Back</a>
+    </body>
+</html>

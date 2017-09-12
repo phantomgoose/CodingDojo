@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            $(document).ready(() => {
+                const c_sock = io.connect();
+                $('#push').click((e) => {
+                    c_sock.emit('button_press');
+                });
+                c_sock.on('button_update', (res) => {
+                    $('#count').html(res.press_count);
+                });
+                $('#reset').click((e) => {
+                    c_sock.emit('button_reset');
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>The button has been pushed <span id="count"></span> time(s)</h1>
+        <p>Push ze button to update the count</p>
+        <button id="push">PUSH ME</button>
+        <button id="reset">reset</button>
+    </body>
+</html>

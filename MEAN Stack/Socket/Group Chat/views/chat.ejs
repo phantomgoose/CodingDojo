@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            $(document).ready(() => {
+                const c_sock = io.connect();
+                const session_id = $('#session_id').val();
+
+                console.log(session_id);
+                c_sock.emit('new_user', { session_id: session_id });
+                c_sock.emit('request_old_messages');
+                c_sock.on('old_messages', (res) => {
+                    for (let m in res.old_messages){
+                        addToChat(res.old_messages[m].name, res.old_messages[m].message);
+                    }
+                });
+                c_sock.on('user_joined', (res) => {
+                    addToChat('Server', `A new user has joined: ${ res.user_name }`);
+                });
+                c_sock.on('user_rejoined', (res) => {
+                    addToChat('Server', `User has reconnected: ${ res.user_name }`);
+                });
+                c_sock.on('message_posted', (res) => {
+                    addToChat(res.name, res.message);
+                });
+                c_sock.on('user_left', (res) => {
+                    addToChat('Server', `User left: ${ res.user_name }`);
+                });
+
+                $('form').submit((e) => {
+                    c_sock.emit('send_message', { session_id: session_id, message: $('#message').val() });
+                    $('#message').val('');
+                    e.preventDefault();
+                });
+
+                $('a').click((e) => {
+                    c_sock.emit('user_force_disconnect', {session_id: session_id});
+                });
+
+                function addToChat(name, message) {
+                    let chat_window = $('#chat');
+                    let html = `${ name }: ${ message }</br>`
+                    chat_window.append(html);
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <h2>Conversation Board</h2>
+        <div id="chat"></div>
+        <form action="#">
+            <input id="session_id" type="hidden" name="session_id" value="<%= session_id %>">
+            <input id='message' name="name" type="text" placeholder="enter your message here" autocomplete="off">
+            <input type="submit" value="Send">
+        </form>
+        <a href="/logout">Log out</a>
+    </body>
+</html>

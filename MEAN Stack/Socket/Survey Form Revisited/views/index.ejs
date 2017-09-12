@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script>
+        $(document).ready(() => {
+            let c_sock = io.connect();
+            $('form').submit((e) => {
+                c_sock.emit('posting_form', { 
+                    form: $('form').serialize()
+                 });
+                e.preventDefault();
+            });
+            c_sock.on('updated_message', (data) => {
+                $('#result1').html(data.response);
+            });
+            c_sock.on('random_number', (data) => {
+                $('#result2').html(data.response);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="result1"></div>
+    <div id="result2"></div>
+    <form action="/result" method="post">
+        Your Name: <input type="text" name="name"></br>
+        Dojo Location <select name="location">
+                <option value="seattle">Seattle</option>
+                <option value="san_jose">San Jose</option>
+                <option value="mars">Mars</option>
+            </select></br>
+        Favorite Language: <select name="language">
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+                <option value="c#">C#</option>
+            </select></br>
+        Comment (optional):</br>
+        <textarea name="comment" cols="30" rows="10"></textarea></br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+
+</html>
