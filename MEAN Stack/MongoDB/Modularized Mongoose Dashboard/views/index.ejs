@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>All ze rabbits</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+    <% if (rabbits) { %>
+    <% for (idx in rabbits) { %>
+        <p>Name: <%= rabbits[idx].name %>, Color: <%= rabbits[idx].color %></p>
+        <a href="/rabbits/<%= rabbits[idx]._id %>">View</a> <a href="/rabbits/edit/<%= rabbits[idx]._id %>">Edit</a></br>
+        <img src="<%= rabbits[idx].pic %>" alt="" style="width: 200px;">
+    <% }} %>
+    </body>
+</html>
