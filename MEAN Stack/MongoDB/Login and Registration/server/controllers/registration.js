@@ -10,22 +10,16 @@ module.exports = {
         }
     },
     register: (req, res) => {
-        if (req.body.password !== req.body.cpassword) {
-            returnJson(res, "error", {
-                password: "Confirmation password did not match."
+        let user = new User(req.body);
+        user
+            .save()
+            .then(user => {
+                req.session.user_id = user._id;
+                res.redirect("/profile");
+            })
+            .catch(err => {
+                returnErrors(res, err);
             });
-        } else {
-            let user = new User(req.body);
-            user
-                .save()
-                .then(user => {
-                    req.session.user_id = user._id;
-                    res.redirect("/profile");
-                })
-                .catch(err => {
-                    returnErrors(res, err);
-                });
-        }
     },
     login: (req, res) => {
         let promise = User.findOne({ email: req.body.email }).exec();
@@ -37,7 +31,7 @@ module.exports = {
                     return user.checkPassword(req.body.password, user._id);
                 }
             })
-            .then((pw_check_res) => {
+            .then(pw_check_res => {
                 let pwCorrect = pw_check_res.res;
                 let user_id = pw_check_res.user_id;
                 if (pwCorrect) {
@@ -57,13 +51,14 @@ module.exports = {
     },
     profile: (req, res) => {
         if (req.session.user_id) {
-            User.findById(req.session.user_id).exec()
-            .then((user) => {
-                res.render("profile", { name: user.first_name });
-            })
-            .catch((err) => {
-                res.redirect('/');
-            })
+            User.findById(req.session.user_id)
+                .exec()
+                .then(user => {
+                    res.render("profile", { name: user.first_name });
+                })
+                .catch(err => {
+                    res.redirect("/");
+                });
         } else {
             res.redirect("/");
         }

@@ -62,7 +62,7 @@ const UserSchema = new mongoose.Schema({
                 return (
                     /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/.test(
                         password
-                    ) && password.length >= 8
+                    )
                 );
             },
             message:
@@ -85,6 +85,22 @@ const UserSchema = new mongoose.Schema({
     }
 });
 
+UserSchema.virtual('passwordConfirmation')
+.get(function(){
+    return this.cpassword;
+})
+.set(function(val){
+    this.cpassword = val;
+})
+
+UserSchema.path('password').validate(function(v){
+    if (this.password || this.cpassword){
+        if (this.password !== this.cpassword){
+            this.invalidate('password', 'Confirmation password doesnt match')
+        }
+    }
+})
+
 UserSchema.pre("save", function(next) {
     let doc = this;
     bcrypt.hash(doc.password, 10, (err, hash) => {
@@ -101,10 +117,6 @@ UserSchema.methods.checkPassword = function(password, user_id) {
     let doc = this;
     let promise = new Promise((resolve, reject) => {
         bcrypt.compare(password, doc.password, (err, res) => {
-            console.log(password);
-            console.log(doc.password);
-            console.log(res);
-            console.log('user id in check pw', user_id);
             if (err) {
                 reject(err);
             } else {
