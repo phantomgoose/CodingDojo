@@ -1,0 +1,15 @@
+<div style="text-align:center">
+  <h1>
+    {{title}}
+  </h1>
+  <button [ngClass]="{'clicked': selected_time_zone == 'pst'}" (click)="show_tz('pst')">PST</button>
+  <button [ngClass]="{'clicked': selected_time_zone == 'mst'}" (click)="show_tz('mst')">MST</button>
+  <button [ngClass]="{'clicked': selected_time_zone == 'cst'}" (click)="show_tz('cst')">CST</button>
+  <button [ngClass]="{'clicked': selected_time_zone == 'est'}" (click)="show_tz('est')">EST</button>
+  <button [ngClass]="{'clicked': selected_time_zone == 'clear'}" (click)="clear()">Clear</button>
+  <!-- <h2>{{$filter('date')(date, 'medium', 'EST')}}</h2> -->
+  <h2 *ngIf="selected_time_zone === 'pst'">{{pst_date | date:'medium'}}</h2>
+  <h2 *ngIf="selected_time_zone === 'mst'">{{mst_date | date:'medium'}}</h2>
+  <h2 *ngIf="selected_time_zone === 'cst'">{{cst_date | date:'medium'}}</h2>
+  <h2 *ngIf="selected_time_zone === 'est'">{{est_date | date:'medium'}}</h2>
+</div>
