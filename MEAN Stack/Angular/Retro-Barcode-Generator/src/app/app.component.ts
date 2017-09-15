@@ -7,7 +7,15 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
     title = "Retro Barcode Generator";
-    colored_divs: Array<RandomColor> = genRandomColors(10);
+    colored_divs: Array<RandomColor> = genRandomColors(1000);
+    colors_to_gen: 200;
+
+    regenerateColors() {
+      this.colored_divs = genRandomColors(1000);
+      setTimeout(() => {
+        this.regenerateColors();
+      }, 100);
+    }
 }
 
 class RandomColor {

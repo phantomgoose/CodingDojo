@@ -1,4 +1,7 @@
 <h1>
   {{title}}
 </h1>
+
+<button (click)="regenerateColors()">Generate</button>
+
 <div [ngStyle]="{'background-color': div.color}" *ngFor="let div of colored_divs"></div>
