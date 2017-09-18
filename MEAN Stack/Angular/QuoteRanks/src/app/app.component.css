@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.errors {
+    color: red;
+}
+
+form, .errors {
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+}
+
+.field {
+    width: 100%;
+    position: relative;
+    float: right;
+    text-align: right;
+}
+
+textarea {
+    text-align: left !important;
+}
