@@ -1,7 +1,8 @@
-<form class="power-selector">
-  <h3>Initial Power Level</h3><select name="power_level" [(ngModel)]="power_level">
+<form class="power-selector" (submit)="onSubmit()">
+  <h3>Initial Power Level</h3><select name="power_level" [(ngModel)]="selected_level">
       <option *ngFor="let n of max_power_level; let i = index" value="{{i+1}}">{{i+1}}</option>
     </select>
+    <input type="submit" value="Calculate Powers">
 </form>
 <div class="powers">
   <app-human [power_level]="power_level"></app-human>
