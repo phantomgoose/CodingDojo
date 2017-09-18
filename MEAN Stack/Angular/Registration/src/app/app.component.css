@@ -1,0 +1,23 @@
+.field {
+    text-align: left;
+}
+
+.field input {
+    padding: 2px;
+}
+
+.field .ng-touched.ng-invalid, .field .ng-dirty.ng-invalid {
+    border: 2px solid red !important;
+}
+
+.field .ng-touched.ng-valid, .field .ng-dirty.ng-invalid {
+    border: 2px solid greenyellow;
+}
+
+.error {
+    color: red;
+}
+
+.result {
+    color: green;
+}

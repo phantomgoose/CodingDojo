@@ -1,0 +1,47 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{title}}
+  </h1>
+  <div *ngIf='submitted' class="result">
+    <p>Thank you for registering with us {{user.first_name}}. We just sent you a confirmation email at {{user.email}}, and we will send all mail to {{user.street_address}} {{user?.street_address_2}}, {{user.city}}, {{user.state}}.</p>
+    <p>Have a wonderful day!</p>
+  </div>
+  <form (submit)='submit()' *ngIf="!submitted" action="#" method="post" #formData='ngForm'>
+    <div class="field">
+      <p>*First Name:</p> <input type="text" name='first_name' [(ngModel)]="user.first_name" required minlength="2"><p *ngIf="!formData.controls.first_name?.valid && formData.controls.first_name?.touched" class="error">First Name is required.</p>
+    </div>
+    <div class="field">
+      <p>*Last Name:</p> <input type="text" name='last_name' [(ngModel)]="user.last_name" required minlength="2"><p *ngIf="!formData.controls.last_name?.valid  && formData.controls.last_name?.touched" class="error">Last Name is required.</p>
+    </div>
+    <div class="field">
+      <p>*Email:</p> <input type="text" name='email' [(ngModel)]="user.email" required pattern="{{email_regex}}"><p *ngIf="!formData.controls.email?.valid  && formData.controls.email?.touched" class="error">A valid email is required.</p>
+    </div>
+    <div class="field">
+      <p>*Password:</p> <input type="password" name='password' [(ngModel)]="user.password" required minlength="16"><p *ngIf="!formData.controls.password?.valid  && formData.controls.password?.dirty" class="error">Password must be at least 16 characters long.</p>
+    </div>
+    <div class="field">
+      <p>*Confirm Password:</p> <input type="password" name='cpassword' [(ngModel)]='user.cpassword' required [ngClass]="{'ng-invalid': formData.controls.password?.value != formData.controls.cpassword?.value}"><p *ngIf="formData.controls.password?.value != formData.controls.cpassword?.value && formData.controls.cpassword?.dirty" class="error">Password confirmation doesn't match.</p>
+    </div>
+    <div class="field">
+      <p>*Street Address:</p> <input type="text" name='street_address' [(ngModel)]="user.street_address" required minlength="2"><p *ngIf="!formData.controls.street_address?.valid  && formData.controls.street_address?.touched" class="error">Address is required.</p>
+    </div>
+    <div class="field">
+      <p>Unit/Apt #:</p> <input type="text" name='street_address_2' [(ngModel)]="user.street_address2">
+    </div>
+    <div class="field">
+      <p>*City:</p> <input type="text" name='city' [(ngModel)]="user.city" required minlength="2"><p *ngIf="!formData.controls.city?.valid  && formData.controls.city?.touched" class="error">City is required.</p>
+    </div>
+    <div class="field">
+      <p>*State:</p>
+      <select name="state" [(ngModel)]='user.state' required>
+        <option value="{{state.name}}" *ngFor="let state of states">{{state.name}}</option>
+      </select>
+      <p *ngIf="!formData.controls.state?.valid  && formData.controls.state?.touched" class="error">State is required.</p>
+    </div>
+    <div class="field">
+      <p>*I'm feeling lucky:</p> <input type="radio" name='lucky' value="yes" [(ngModel)]="user.lucky" checked required>Yes<input type="radio" name="lucky" value="no" [(ngModel)]="user.lucky" required>No<p *ngIf="!formData.controls.lucky?.valid  && formData.controls.lucky?.touched" class="error">You must choose if you're lucky or not.</p></div>
+    <div class="field"><input type="submit" value="Submit" [disabled]="formData?.valid === true && formData.controls.password?.value == formData.controls.cpassword?.value ? null : true">
+    </div>
+  </form>
+</div>
