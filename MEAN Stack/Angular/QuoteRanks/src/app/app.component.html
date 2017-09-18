@@ -2,14 +2,14 @@
   {{title}}
 </h1>
 <form (submit)="submit()" #form="ngForm">
-  <textarea input class="field" name="content" type="text" [(ngModel)]="quote.content" required minlength="4" cols="30" rows="10"></textarea>
+  <textarea input class="field" name="content" type="text" [(ngModel)]="quote.content" required minlength="4" cols="30" rows="10" #content="ngModel"></textarea>
   <div class="field">
-    <label for="author">Author</label><input type="text" name="author" [(ngModel)]="quote.author" required minlength="1">
+    <label for="author">Author</label><input type="text" name="author" [(ngModel)]="quote.author" required minlength="1" #author="ngModel">
   </div>
   <input class="field" type="submit" value="Add Quote" [disabled]="form.valid ? null : true">
 </form>
 <div class="errors">
-  <p *ngIf="!form.controls.content?.valid && form.controls.content?.touched" class="error">A quote is required!</p>
-  <p *ngIf="!form.controls.author?.valid && form.controls.author?.touched" class="error">An author is required!</p>
+  <p *ngIf="!content?.valid && content?.touched" class="error">A quote is required!</p>
+  <p *ngIf="!author?.valid && author?.touched" class="error">An author is required!</p>
 </div>
 <app-quote-list [quotes]="quotes" (onDelete)="deleteQuote($event)" (onSort)="sortQuotes()"></app-quote-list>

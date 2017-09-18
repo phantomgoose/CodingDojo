@@ -1,0 +1,13 @@
+<form class="power-selector">
+  <h3>Initial Power Level</h3><select name="power_level" [(ngModel)]="power_level">
+      <option *ngFor="let n of max_power_level; let i = index" value="{{i+1}}">{{i+1}}</option>
+    </select>
+</form>
+<div class="powers">
+  <app-human [power_level]="power_level"></app-human>
+  <app-saiyan [power_level]="power_level"></app-saiyan>
+  <app-super-saiyan [power_level]="power_level"></app-super-saiyan>
+  <app-super-saiyan-two [power_level]="power_level"></app-super-saiyan-two>
+  <app-super-saiyan-three [power_level]="power_level"></app-super-saiyan-three>
+  <app-super-saiyan-four [power_level]="power_level"></app-super-saiyan-four>
+</div>
