@@ -1,0 +1,12 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{title}}
+  </h1>
+  <div class="btn-container">
+    <div (click)='btn.flip()' [ngClass]="{'on': btn.state, 'off':!btn.state, 'btn':true}" *ngFor="let btn of button_array">
+      <p *ngIf="btn.state">On</p>
+      <p *ngIf='!btn.state'>Off</p>
+    </div>
+  </div>
+</div>
