@@ -1,0 +1,8 @@
+<div class="lookup">
+  <h1>GitHub Score</h1>
+  <form #f="ngForm" (submit)="onSubmit($event, f)">
+    <label for="username">GitHub Username</label>&nbsp;<input type="text" name="username" required [(ngModel)]="username">
+    <input type="submit" value="Calculate my GitHub Score" [disabled]="!f.valid">
+  </form>
+</div>
+<app-results></app-results>

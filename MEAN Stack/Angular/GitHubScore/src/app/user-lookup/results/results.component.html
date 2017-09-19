@@ -1,0 +1,7 @@
+<div *ngIf="content.payload && content?.type != 'error'" class="results">
+  <h1>Your Score: {{content?.payload.score}}</h1>
+  <p [ngStyle]="{'color': content?.payload.color}">{{content?.payload.message}}</p>
+</div>
+<div *ngIf="content.payload && content?.type == 'error'" class="error">
+  <p>{{ content.payload.message }}</p>
+</div>
