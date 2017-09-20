@@ -1,0 +1,14 @@
+<div class="container">
+  <header>
+    <h1>Anonymous Notes</h1>
+    <form (submit)="onSubmit(formData)" action="#" #formData='ngForm'>
+      <label for="content">Note:</label>
+      <input type="text" name="content" #content="ngModel" [(ngModel)]="note.content" required minlength="3">
+      <input class="add-note-btn" type="submit" val="Add Note" [disabled]="!formData.valid">
+      <p><span class="error" *ngIf="content.invalid && content.touched &&content?.value?.length > 0">Note must be at least 3 characters long!</span></p>
+    </form>
+  </header>
+  <main>
+    <app-notes-list></app-notes-list>
+  </main>
+</div>

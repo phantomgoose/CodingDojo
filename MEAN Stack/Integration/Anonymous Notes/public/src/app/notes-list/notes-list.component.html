@@ -1,0 +1,4 @@
+<div class="note" *ngFor="let note of notes">
+  <p class="timestamp">Noted on: {{ note.createdAt | date:'medium' }}</p>
+  <p>{{ note.content }}</p>
+</div>

@@ -1,0 +1,23 @@
+.container {
+    background-color: #DDDDDD;
+    padding: 10px;
+}
+form {
+    padding: 10px;
+    background-color: white;
+}
+.add-note-btn {
+    background-color: green;
+    color: white;
+    box-shadow: 2px 2px 2px black;
+}
+header {
+    height: 120px;
+}
+main {
+    height: 600px;
+    overflow-y: scroll;
+}
+.error {
+    color: red;
+}

@@ -1,0 +1,9 @@
+.note {
+    border: thick solid black;
+    background-color: white;
+    margin: 5px 5px 5px 0;
+    padding: 5px;
+}
+.timestamp {
+    text-align: right;
+}
