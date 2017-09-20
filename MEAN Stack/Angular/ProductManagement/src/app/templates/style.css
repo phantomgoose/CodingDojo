@@ -1,0 +1,42 @@
+.create, .edit, .delete, .update {
+    color: white;
+    border: thin solid black;
+    box-shadow: 2px 2px 2px black;
+}
+
+.create {
+    background-color: green;
+}
+
+.edit {
+    background-color: orange;
+    width: 100%;
+}
+
+.delete {
+    background-color: red;
+    width: 100%;
+}
+
+.update {
+    background-color: blue;
+}
+
+form input {
+    display: block;
+}
+
+.product-info {
+    width: 45%;
+    display: inline-block;
+    border: thick solid black;
+    margin: 5px;
+    padding: 5px;
+    background-color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.product-info img {
+    width: 100%;
+}

@@ -1,0 +1,8 @@
+<h1>Products List</h1>
+<div class="product-info" *ngFor="let product of products; let idx = index">
+  <img src="{{ product.image_url }}" alt="Product picture">
+  <p>{{product.title}}</p>
+  <p>{{product.price | currency:'USD':true }}</p>
+  <button class="edit" (click)="onEdit(idx)">EDIT</button>
+  <button class="delete" (click)="onDelete(idx)">Delete</button>
+</div>
