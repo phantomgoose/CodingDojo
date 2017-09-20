@@ -1,0 +1,14 @@
+<div *ngIf="!errors" class="container">
+  <h2>{{ service_response?.payload?.name }}</h2>
+  <div class="stats">
+    <p>Humidity: {{ service_response?.payload?.humidity }}</p>
+    <p>Temperature (Current): {{ service_response?.payload?.temp_current }}F</p>
+    <p>Temperature (High): {{ service_response?.payload?.temp_high }}F</p>
+    <p>Temperature (Low): {{ service_response?.payload?.temp_low }}F</p>
+    <p>Status: {{ service_response?.payload?.status }}</p>
+  </div>
+  <img src="{{ service_response?.payload?.pic }}" alt="Picture of {{ service_response?.payload?.name }}">
+</div>
+<div *ngIf="errors">
+  {{service_response?.payload.message}}
+</div>

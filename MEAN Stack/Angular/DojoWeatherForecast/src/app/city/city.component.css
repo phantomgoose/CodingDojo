@@ -1,0 +1,13 @@
+div, img {
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+}
+
+h2 {
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+}
