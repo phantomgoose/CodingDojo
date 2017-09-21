@@ -1,0 +1,10 @@
+nav {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #1860A1;
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: underline;
+}
