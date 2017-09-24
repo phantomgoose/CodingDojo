@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const short_id = require("shortid");
 
 const PlayerSchema = new mongoose.Schema(
     {
@@ -15,7 +16,7 @@ const PlayerSchema = new mongoose.Schema(
             type: Number,
             validate: {
                 validator: function(v) {
-                    return [1, 2, 3].indexOf(v) > 0;
+                    return [1, 2, 3].indexOf(v) >= 0;
                 },
                 message: `{VALUE} is not a valid status`
             }
@@ -24,7 +25,7 @@ const PlayerSchema = new mongoose.Schema(
             type: Number,
             validate: {
                 validator: function(v) {
-                    return [1, 2, 3].indexOf(v) > 0;
+                    return [1, 2, 3].indexOf(v) >= 0;
                 },
                 message: `{VALUE} is not a valid status`
             }
@@ -33,10 +34,14 @@ const PlayerSchema = new mongoose.Schema(
             type: Number,
             validate: {
                 validator: function(v) {
-                    return [1, 2, 3].indexOf(v) > 0;
+                    return [1, 2, 3].indexOf(v) >= 0;
                 },
                 message: `{VALUE} is not a valid status`
             }
+        },
+        short_id: {
+            type: String,
+            default: short_id.generate
         }
     },
     { timestamps: true }

@@ -8,3 +8,9 @@ nav {
 nav a {
     text-decoration: underline;
 }
+
+button, .add-player-btw {
+    background-color: white;
+    box-shadow: 2px 2px 2px black;
+    border: thick solid black;
+}

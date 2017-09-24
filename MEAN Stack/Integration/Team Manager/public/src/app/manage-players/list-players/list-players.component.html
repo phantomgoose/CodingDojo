@@ -1,3 +1,13 @@
-<nav>
-  <!-- <a [routerLink]="['players', 'list']"></a> -->
-</nav>
+<table>
+  <tr>
+    <th>Player Name</th>
+    <th>Preferred Position</th>
+    <th>Actions</th>
+  </tr>
+  <tr class="player-row" *ngFor="let player of players">
+    <td>{{ player.name }}</td>
+    <td>{{ player.position }}</td>
+    <td><button (click)="confirmDelete(player.short_id)" class="delete-btn">DELETE</button></td>
+    <div *ngIf="display_delete_confirmation.display && display_delete_confirmation.short_id == player.short_id" class="delete-confirm-popup"><p>Are you sure you want to delete player {{ player.name }}?</p><button (click)="deletePlayer(player.short_id)" >YES</button><button (click)="cancelDelete()">NO</button></div>
+  </tr>
+</table>

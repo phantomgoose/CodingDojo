@@ -1,0 +1,19 @@
+.player-row {
+    position: relative;
+}
+.delete-confirm-popup {
+    border: thick solid red;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 5em;
+    width: 18em;
+    margin-left: -9em;
+    margin-top: -2.5em;
+    background-color: white;
+    padding: .3em;
+}
+.delete-btn {
+    background-color: red;
+    color: white;
+}

@@ -1,3 +1,16 @@
-<p>
-  manage-status works!
-</p>
+<h1>Player Status - Game {{ game }}</h1>
+<nav>
+  <a href="/status/game/1">Game 1</a>
+  <a href="/status/game/2">Game 2</a>
+  <a href="/status/game/3">Game 3</a>
+</nav>
+<table>
+  <tr>
+    <th>Player Name</th>
+    <th>Status</th>
+  </tr>
+  <tr *ngFor="let player of players; let idx = index">
+    <td>{{ player.name }}</td>
+    <td><button (click)="setGameStatusByPlayerIdx(idx, 1)" [ngClass]="{'playing': getGameStatusByPlayerIdx(idx) == 1}">Playing</button><button (click)="setGameStatusByPlayerIdx(idx, 2)" [ngClass]="{'not-playing': getGameStatusByPlayerIdx(idx) == 2}">Not Playing</button><button (click)="setGameStatusByPlayerIdx(idx, 3)" [ngClass]="{'undecided': getGameStatusByPlayerIdx(idx) == 3}">Undecided</button></td>
+  </tr>
+</table>

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { ListPlayersComponent } from "./manage-players/list-players/list-players.component";
 import { CreatePlayerComponent } from "./manage-players/create-player/create-player.component";
 import { ManagePlayersComponent } from "./manage-players/manage-players.component";
+import { ManageStatusComponent } from "./manage-status/manage-status.component";
 const routes: Routes = [
     {
         path: "players",
@@ -18,10 +19,13 @@ const routes: Routes = [
             }
         ]
     },
-
+    {
+        path: "status/game/:id",
+        component: ManageStatusComponent
+    },
     {
         path: "**",
-        redirectTo: "players"
+        redirectTo: "players/list"
     }
 ];
 
