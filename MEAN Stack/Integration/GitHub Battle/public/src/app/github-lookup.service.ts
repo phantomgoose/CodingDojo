@@ -8,11 +8,16 @@ export class GithubLookupService {
     private current_players = Array(2);
     currentPlayersSubject = new BehaviorSubject(this.current_players);
     private all_players = [];
+    allPlayersSubject = new BehaviorSubject(this.all_players);
 
     constructor(private _http: Http) {
         this.currentPlayersSubject.subscribe(current_players => {
             this.current_players = current_players;
         });
+        this.allPlayersSubject.subscribe(all_players => {
+            this.all_players = all_players;
+        });
+        this.getAllPlayers();
     }
 
     getGitHubUser(
@@ -43,16 +48,21 @@ export class GithubLookupService {
 
     pushPlayersToDB() {
         for (let player of this.current_players) {
-            console.log("pushing players to db", player);
             let payload = {
                 login: player.login,
                 avatar_url: player.avatar_url,
                 score: player.score
             };
             this._http.post("/players", payload).subscribe(res => {
-                console.log(res);
+                this.getAllPlayers();
             });
         }
+    }
+
+    getAllPlayers() {
+        this._http.get("/players").subscribe(players => {
+            this.allPlayersSubject.next(players.json());
+        });
     }
 
     resetCurrentPlayers() {

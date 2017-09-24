@@ -36,10 +36,10 @@ export class ResultsComponent implements OnInit {
         }
 
         this._githubLookup.pushPlayersToDB();
+        this._githubLookup.resetCurrentPlayers();
     }
 
     reset() {
-        this._githubLookup.resetCurrentPlayers();
         this._router.navigate([""]);
     }
 }

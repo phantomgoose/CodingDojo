@@ -1,0 +1,11 @@
+.player img {
+    width: 200px;
+}
+
+.player * {
+    display: inline-block;
+    vertical-align: top;
+}
+.player div p {
+    display: block;
+}

@@ -19,19 +19,37 @@ module.exports = {
         };
         let url = `https://api.github.com/users/${username}`;
         let user = request.get(url, options, (err, result, body) => {
-            console.log(url);
             res.json(result);
         });
     },
     createPlayer: (req, res) => {
-        let player = new Player(req.body);
-        player
-            .save()
+        Player.findOne({ login: req.body.login })
+            .exec()
             .then(player => {
-                console.log(player);
+                if (player) {
+                    player.score = req.body.score;
+                    player.avatar_url = req.body.avatar_url;
+                } else {
+                    player = new Player(req.body);
+                }
+                return player.save();
+            })
+            .then(player => {
+                res.json(player);
             })
             .catch(err => {
-                console.log(err);
+                console.log("could not create player", err);
+            });
+    },
+    getPlayers: (req, res) => {
+        Player.find({}, "-_id")
+            .sort("-score")
+            .exec()
+            .then(players => {
+                res.json(players);
+            })
+            .catch(err => {
+                console.log("could not get players", err);
             });
     }
 };

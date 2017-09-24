@@ -6,8 +6,11 @@ module.exports = app => {
     });
 
     app.post("/players", (req, res) => {
-        console.log("got post", req.body);
         battle.createPlayer(req, res);
+    });
+
+    app.get("/players", (req, res) => {
+        battle.getPlayers(req, res);
     });
 
     app.all("*", (req, res) => {
