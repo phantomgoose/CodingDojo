@@ -1,6 +1,7 @@
 const path = require("path");
 const GitHubKey = require("../secrets/github.token.js").key;
 const request = require("request");
+const Player = require("mongoose").model("Player");
 
 module.exports = {
     root: (req, res) => {
@@ -13,7 +14,7 @@ module.exports = {
         let options = {
             headers: {
                 "User-Agent": "GitHub Battle",
-                "Authorization": `token ${GitHubKey}`
+                Authorization: `token ${GitHubKey}`
             }
         };
         let url = `https://api.github.com/users/${username}`;
@@ -21,5 +22,16 @@ module.exports = {
             console.log(url);
             res.json(result);
         });
+    },
+    createPlayer: (req, res) => {
+        let player = new Player(req.body);
+        player
+            .save()
+            .then(player => {
+                console.log(player);
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }
 };

@@ -41,6 +41,20 @@ export class GithubLookupService {
             });
     }
 
+    pushPlayersToDB() {
+        for (let player of this.current_players) {
+            console.log("pushing players to db", player);
+            let payload = {
+                login: player.login,
+                avatar_url: player.avatar_url,
+                score: player.score
+            };
+            this._http.post("/players", payload).subscribe(res => {
+                console.log(res);
+            });
+        }
+    }
+
     resetCurrentPlayers() {
         this.current_players = Array(2);
         this.currentPlayersSubject.next(this.current_players);

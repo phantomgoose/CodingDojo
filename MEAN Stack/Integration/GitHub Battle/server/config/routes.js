@@ -5,6 +5,11 @@ module.exports = app => {
         battle.getUser(req, res);
     });
 
+    app.post("/players", (req, res) => {
+        console.log("got post", req.body);
+        battle.createPlayer(req, res);
+    });
+
     app.all("*", (req, res) => {
         battle.root(req, res);
     });
