@@ -1,0 +1,26 @@
+.error {
+    color: red;
+    animation: fadeIn 2s linear;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.player-info img {
+    width: 200px;
+}
+
+.player {
+    display: inline-block;
+    width: 300px;
+}
+
+button {
+    display: block;
+}

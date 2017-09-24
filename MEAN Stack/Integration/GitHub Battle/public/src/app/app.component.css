@@ -1,0 +1,8 @@
+nav * {
+    display: inline;
+}
+
+nav span {
+    color: #0F5B9C;
+    float: right;
+}

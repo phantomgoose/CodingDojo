@@ -1,0 +1,27 @@
+<div class="player">
+  <h2>Player 1</h2>
+  <form *ngIf="!user1.valid" (submit)="onSubmit(1)" #formData1="ngForm" class="player-form" >
+    <label for="username1">GitHub Username</label>
+    <input type="text" name="username1" required [(ngModel)]="user1.name">
+    <input type="submit" value="Get User" [disabled]="formData1.invalid">
+    <p class="error" *ngIf="formData1._submitted && !user1.valid">GitHub username not found, please try again.</p>
+  </form>
+  <div *ngIf="user1.valid" class="player-info">
+    <img src="{{ current_players[0].avatar_url }}" alt="">
+    <p>{{ current_players[0]?.login }}</p>
+  </div>
+</div>
+<div class="player">
+  <h2>Player 2</h2>
+  <form *ngIf="!user2.valid" (submit)="onSubmit(2)" #formData2="ngForm" class="player-form" >
+    <label for="username2">GitHub Username</label>
+    <input type="text" name="username2" required [(ngModel)]="user2.name">
+    <input type="submit" value="Get User" [disabled]="formData2.invalid">
+    <p class="error" *ngIf="formData2._submitted && !user2.valid">GitHub username not found, please try again.</p>
+  </form>
+  <div *ngIf="user2.valid" class="player-info">
+    <img src="{{ current_players[1].avatar_url }}" alt="">
+    <p>{{ current_players[1]?.login }}</p>
+  </div>
+</div>
+<button (click)="fight()" *ngIf="current_players[0] && current_players[1]" class="fight">FIGHT!</button>
