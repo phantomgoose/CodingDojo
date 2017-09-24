@@ -25,7 +25,7 @@ export class BattleComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-        this._githubLookup.playersSubject.subscribe(current_players => {
+        this._githubLookup.currentPlayersSubject.subscribe(current_players => {
             this.current_players = current_players;
         });
     }

@@ -1,0 +1,22 @@
+.player-info img {
+    width: 200px;
+}
+.winner {
+    color: green;
+}
+.loser {
+    color: red;
+}
+aside,
+main {
+    display: inline-block;
+    width: 300px;
+}
+button {
+    display: block;
+    background-color: black;
+    color: white;
+    margin-left: 40%;
+    margin-right: 40%;
+    width: 20%;
+}

@@ -1,3 +1,15 @@
-<p>
-  results works!
-</p>
+<aside>
+  <div class="winner">
+    <h1>1st Place</h1>
+    <p>{{ winner?.login }} (Score: {{ winner?.score }})</p>
+  </div>
+  <div class="loser">
+    <h1>2nd Place</h1>
+    <p>{{ loser?.login }} (Score: {{ loser?.score }})</p>
+  </div>
+</aside>
+<main class="player-info">
+  <img src="{{ winner?.avatar_url }}" alt="">
+  <p>{{ winner?.login }}</p>
+</main>
+<button (click)="reset()">RESET</button>
