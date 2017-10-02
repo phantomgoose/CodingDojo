@@ -1,0 +1,40 @@
+<h2>Bike of the day!</h2>
+<div class="bike-display">
+  <img src="" alt="">
+  <div class="content">
+    <h1>Title</h1>
+    <p>Description</p>
+  </div>
+  <div class="info">
+    <p class="price">Price</p>
+    <p>Location</p>
+  </div>
+</div>
+
+<form #loginForm="ngForm">
+  <label for="email">*Email:</label>
+  <input type="text" name="email" required [(ngModel)]=login.email>
+  <label for="password">*Password:</label>
+  <input type="password" name="password" required [(ngModel)]=login.password>
+  <p class="error">Invalid Credentials.</p>
+  <input type="submit" value="Login" [disabled]="loginForm.invalid">
+</form>
+
+<form (submit)="onRegister()" #registrationForm="ngForm">
+  <label for="first_name">*First Name</label>
+  <input type="text" name="first_name" required [(ngModel)]=registration.first_name #first_name="ngModel">
+  <p *ngIf="first_name.invalid && first_name.touched" class="error">First name must be at least 1 character long</p>
+  <label for="last_name">*Last Name</label>
+  <input type="text" name="last_name" required [(ngModel)]=registration.last_name #last_name="ngModel">
+  <p *ngIf="last_name.invalid && last_name.touched" class="error">Last name must be at least 1 character long</p>
+  <label for="email">*Email</label>
+  <input type="text" name="email" required [(ngModel)]=registration.email #email="ngModel">
+  <p *ngIf="email.invalid && email.touched" class="error">Email must be at least 1 character long</p>
+  <label for="password">*Password</label>
+  <input type="text" name="password" required minlength="16" [(ngModel)]=registration.password #password="ngModel">
+  <p *ngIf="password.invalid && password.touched" class="error">Password must be at least 16 character long</p>
+  <label for="cpassword">*Password confirmation</label>
+  <input type="text" name="cpassword" required [(ngModel)]=registration.cpassword #cpassword="ngModel">
+  <p *ngIf="(cpassword.invalid || cpassword.value != password.value) && cpassword.touched " class="error">Password confirmation must match</p>
+  <input type="submit" value="Register" [disabled]="registrationForm.invalid || cpassword.value != password.value">
+</form>

@@ -1,0 +1,9 @@
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Group activity I\bin\Debug\netcoreapp1.1\Group activity I.deps.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Group activity I\bin\Debug\netcoreapp1.1\Group activity I.runtimeconfig.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Group activity I\bin\Debug\netcoreapp1.1\Group activity I.runtimeconfig.dev.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Group activity I\bin\Debug\netcoreapp1.1\Group activity I.dll
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Group activity I\bin\Debug\netcoreapp1.1\Group activity I.pdb
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Group activity I\obj\Debug\netcoreapp1.1\Group activity I.csproj.CoreCompileInputs.cache
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Group activity I\obj\Debug\netcoreapp1.1\Group activity I.AssemblyInfo.cs
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Group activity I\obj\Debug\netcoreapp1.1\Group activity I.dll
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Group activity I\obj\Debug\netcoreapp1.1\Group activity I.pdb

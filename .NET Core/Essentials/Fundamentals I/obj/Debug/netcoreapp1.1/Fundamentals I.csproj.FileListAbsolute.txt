@@ -1,0 +1,9 @@
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Fundamentals I\bin\Debug\netcoreapp1.1\Fundamentals I.deps.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Fundamentals I\bin\Debug\netcoreapp1.1\Fundamentals I.runtimeconfig.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Fundamentals I\bin\Debug\netcoreapp1.1\Fundamentals I.runtimeconfig.dev.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Fundamentals I\bin\Debug\netcoreapp1.1\Fundamentals I.dll
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Fundamentals I\bin\Debug\netcoreapp1.1\Fundamentals I.pdb
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Fundamentals I\obj\Debug\netcoreapp1.1\Fundamentals I.csproj.CoreCompileInputs.cache
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Fundamentals I\obj\Debug\netcoreapp1.1\Fundamentals I.AssemblyInfo.cs
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Fundamentals I\obj\Debug\netcoreapp1.1\Fundamentals I.dll
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Fundamentals I\obj\Debug\netcoreapp1.1\Fundamentals I.pdb
