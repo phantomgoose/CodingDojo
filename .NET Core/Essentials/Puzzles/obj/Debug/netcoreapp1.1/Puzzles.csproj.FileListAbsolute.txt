@@ -1,0 +1,9 @@
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Puzzles\bin\Debug\netcoreapp1.1\Puzzles.deps.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Puzzles\bin\Debug\netcoreapp1.1\Puzzles.runtimeconfig.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Puzzles\bin\Debug\netcoreapp1.1\Puzzles.runtimeconfig.dev.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Puzzles\bin\Debug\netcoreapp1.1\Puzzles.dll
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Puzzles\bin\Debug\netcoreapp1.1\Puzzles.pdb
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Puzzles\obj\Debug\netcoreapp1.1\Puzzles.csproj.CoreCompileInputs.cache
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Puzzles\obj\Debug\netcoreapp1.1\Puzzles.AssemblyInfo.cs
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Puzzles\obj\Debug\netcoreapp1.1\Puzzles.dll
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Puzzles\obj\Debug\netcoreapp1.1\Puzzles.pdb

@@ -1,0 +1,9 @@
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Collections Practice\bin\Debug\netcoreapp1.1\Collections Practice.deps.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Collections Practice\bin\Debug\netcoreapp1.1\Collections Practice.runtimeconfig.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Collections Practice\bin\Debug\netcoreapp1.1\Collections Practice.runtimeconfig.dev.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Collections Practice\bin\Debug\netcoreapp1.1\Collections Practice.dll
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Collections Practice\bin\Debug\netcoreapp1.1\Collections Practice.pdb
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Collections Practice\obj\Debug\netcoreapp1.1\Collections Practice.csproj.CoreCompileInputs.cache
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Collections Practice\obj\Debug\netcoreapp1.1\Collections Practice.AssemblyInfo.cs
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Collections Practice\obj\Debug\netcoreapp1.1\Collections Practice.dll
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Collections Practice\obj\Debug\netcoreapp1.1\Collections Practice.pdb

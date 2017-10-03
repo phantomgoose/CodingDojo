@@ -1,0 +1,9 @@
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Human\bin\Debug\netcoreapp1.1\Human.deps.json
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Human\bin\Debug\netcoreapp1.1\Human.runtimeconfig.json
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Human\bin\Debug\netcoreapp1.1\Human.runtimeconfig.dev.json
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Human\bin\Debug\netcoreapp1.1\Human.dll
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Human\bin\Debug\netcoreapp1.1\Human.pdb
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Human\obj\Debug\netcoreapp1.1\Human.csproj.CoreCompileInputs.cache
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Human\obj\Debug\netcoreapp1.1\Human.AssemblyInfo.cs
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Human\obj\Debug\netcoreapp1.1\Human.dll
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Human\obj\Debug\netcoreapp1.1\Human.pdb

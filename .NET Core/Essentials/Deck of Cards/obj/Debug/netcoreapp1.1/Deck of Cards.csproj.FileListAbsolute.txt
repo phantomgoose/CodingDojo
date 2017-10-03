@@ -1,0 +1,9 @@
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Deck of Cards\bin\Debug\netcoreapp1.1\Deck of Cards.deps.json
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Deck of Cards\bin\Debug\netcoreapp1.1\Deck of Cards.runtimeconfig.json
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Deck of Cards\bin\Debug\netcoreapp1.1\Deck of Cards.runtimeconfig.dev.json
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Deck of Cards\bin\Debug\netcoreapp1.1\Deck of Cards.dll
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Deck of Cards\bin\Debug\netcoreapp1.1\Deck of Cards.pdb
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Deck of Cards\obj\Debug\netcoreapp1.1\Deck of Cards.csproj.CoreCompileInputs.cache
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Deck of Cards\obj\Debug\netcoreapp1.1\Deck of Cards.AssemblyInfo.cs
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Deck of Cards\obj\Debug\netcoreapp1.1\Deck of Cards.dll
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Deck of Cards\obj\Debug\netcoreapp1.1\Deck of Cards.pdb
