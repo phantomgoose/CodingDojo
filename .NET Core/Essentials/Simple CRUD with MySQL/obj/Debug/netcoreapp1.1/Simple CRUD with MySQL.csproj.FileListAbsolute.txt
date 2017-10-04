@@ -1,0 +1,9 @@
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Simple CRUD with MySQL\bin\Debug\netcoreapp1.1\Simple CRUD with MySQL.deps.json
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Simple CRUD with MySQL\bin\Debug\netcoreapp1.1\Simple CRUD with MySQL.runtimeconfig.json
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Simple CRUD with MySQL\bin\Debug\netcoreapp1.1\Simple CRUD with MySQL.runtimeconfig.dev.json
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Simple CRUD with MySQL\bin\Debug\netcoreapp1.1\Simple CRUD with MySQL.dll
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Simple CRUD with MySQL\bin\Debug\netcoreapp1.1\Simple CRUD with MySQL.pdb
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Simple CRUD with MySQL\obj\Debug\netcoreapp1.1\Simple CRUD with MySQL.csproj.CoreCompileInputs.cache
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Simple CRUD with MySQL\obj\Debug\netcoreapp1.1\Simple CRUD with MySQL.AssemblyInfo.cs
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Simple CRUD with MySQL\obj\Debug\netcoreapp1.1\Simple CRUD with MySQL.dll
+d:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\.NET Core\Essentials\Simple CRUD with MySQL\obj\Debug\netcoreapp1.1\Simple CRUD with MySQL.pdb
