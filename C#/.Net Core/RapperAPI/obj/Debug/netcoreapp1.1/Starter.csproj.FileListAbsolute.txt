@@ -1,0 +1,9 @@
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\c#\.Net Core\RapperAPI\bin\Debug\netcoreapp1.1\Starter.deps.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\c#\.Net Core\RapperAPI\bin\Debug\netcoreapp1.1\Starter.runtimeconfig.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\c#\.Net Core\RapperAPI\bin\Debug\netcoreapp1.1\Starter.runtimeconfig.dev.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\c#\.Net Core\RapperAPI\bin\Debug\netcoreapp1.1\Starter.dll
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\c#\.Net Core\RapperAPI\bin\Debug\netcoreapp1.1\Starter.pdb
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\c#\.Net Core\RapperAPI\obj\Debug\netcoreapp1.1\Starter.csproj.CoreCompileInputs.cache
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\c#\.Net Core\RapperAPI\obj\Debug\netcoreapp1.1\Starter.AssemblyInfo.cs
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\c#\.Net Core\RapperAPI\obj\Debug\netcoreapp1.1\Starter.dll
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\c#\.Net Core\RapperAPI\obj\Debug\netcoreapp1.1\Starter.pdb

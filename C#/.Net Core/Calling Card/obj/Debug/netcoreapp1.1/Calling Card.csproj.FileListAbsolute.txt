@@ -1,0 +1,9 @@
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\c#\.Net Core\Calling Card\bin\Debug\netcoreapp1.1\Calling Card.deps.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\c#\.Net Core\Calling Card\bin\Debug\netcoreapp1.1\Calling Card.runtimeconfig.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\c#\.Net Core\Calling Card\bin\Debug\netcoreapp1.1\Calling Card.runtimeconfig.dev.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\c#\.Net Core\Calling Card\bin\Debug\netcoreapp1.1\Calling Card.dll
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\c#\.Net Core\Calling Card\bin\Debug\netcoreapp1.1\Calling Card.pdb
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\c#\.Net Core\Calling Card\obj\Debug\netcoreapp1.1\Calling Card.csproj.CoreCompileInputs.cache
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\c#\.Net Core\Calling Card\obj\Debug\netcoreapp1.1\Calling Card.AssemblyInfo.cs
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\c#\.Net Core\Calling Card\obj\Debug\netcoreapp1.1\Calling Card.dll
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\c#\.Net Core\Calling Card\obj\Debug\netcoreapp1.1\Calling Card.pdb
