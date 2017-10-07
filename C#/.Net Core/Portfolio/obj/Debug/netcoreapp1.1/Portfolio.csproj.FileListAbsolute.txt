@@ -1,0 +1,9 @@
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Portfolio\bin\Debug\netcoreapp1.1\Portfolio.deps.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Portfolio\bin\Debug\netcoreapp1.1\Portfolio.runtimeconfig.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Portfolio\bin\Debug\netcoreapp1.1\Portfolio.runtimeconfig.dev.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Portfolio\bin\Debug\netcoreapp1.1\Portfolio.dll
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Portfolio\bin\Debug\netcoreapp1.1\Portfolio.pdb
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Portfolio\obj\Debug\netcoreapp1.1\Portfolio.csproj.CoreCompileInputs.cache
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Portfolio\obj\Debug\netcoreapp1.1\Portfolio.AssemblyInfo.cs
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Portfolio\obj\Debug\netcoreapp1.1\Portfolio.dll
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Portfolio\obj\Debug\netcoreapp1.1\Portfolio.pdb

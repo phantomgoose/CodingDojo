@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/css/master.css">
+    <title>Dojo Survey Results</title>
+</head>
+<body>
+    <div class="results">
+        <h3>Submitted Info</h3>
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td>@TempData["name"]</td>
+            </tr>
+            <tr>
+                <td>Dojo Location:</td>
+                <td>@TempData["location"]</td>
+            </tr>
+            <tr>
+                <td>Favorite Language:</td>
+                <td>@TempData["language"]</td>
+            </tr>
+            <tr>
+                <td>Comment:</td>
+                <td>@TempData["comment"]</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

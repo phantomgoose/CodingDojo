@@ -1,0 +1,9 @@
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\group activities\random project\bin\Debug\netcoreapp1.1\random project.deps.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\group activities\random project\bin\Debug\netcoreapp1.1\random project.runtimeconfig.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\group activities\random project\bin\Debug\netcoreapp1.1\random project.runtimeconfig.dev.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\group activities\random project\bin\Debug\netcoreapp1.1\random project.dll
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\group activities\random project\bin\Debug\netcoreapp1.1\random project.pdb
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\group activities\random project\obj\Debug\netcoreapp1.1\random project.csproj.CoreCompileInputs.cache
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\group activities\random project\obj\Debug\netcoreapp1.1\random project.AssemblyInfo.cs
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\group activities\random project\obj\Debug\netcoreapp1.1\random project.dll
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\group activities\random project\obj\Debug\netcoreapp1.1\random project.pdb

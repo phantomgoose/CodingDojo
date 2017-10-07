@@ -1,0 +1,27 @@
+img {
+    width: 100px;
+}
+
+.project {
+    background-color: gray;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+textarea {
+    display: block;
+}
+
+form {
+    width: 270px;
+}
+
+.field {
+    background-color: darkorange;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}

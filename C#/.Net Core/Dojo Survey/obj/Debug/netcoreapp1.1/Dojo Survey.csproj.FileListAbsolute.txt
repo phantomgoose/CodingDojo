@@ -1,0 +1,9 @@
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Dojo Survey\bin\Debug\netcoreapp1.1\Dojo Survey.deps.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Dojo Survey\bin\Debug\netcoreapp1.1\Dojo Survey.runtimeconfig.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Dojo Survey\bin\Debug\netcoreapp1.1\Dojo Survey.runtimeconfig.dev.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Dojo Survey\bin\Debug\netcoreapp1.1\Dojo Survey.dll
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Dojo Survey\bin\Debug\netcoreapp1.1\Dojo Survey.pdb
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Dojo Survey\obj\Debug\netcoreapp1.1\Dojo Survey.csproj.CoreCompileInputs.cache
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Dojo Survey\obj\Debug\netcoreapp1.1\Dojo Survey.AssemblyInfo.cs
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Dojo Survey\obj\Debug\netcoreapp1.1\Dojo Survey.dll
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Dojo Survey\obj\Debug\netcoreapp1.1\Dojo Survey.pdb

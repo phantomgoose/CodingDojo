@@ -1,0 +1,9 @@
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Random Passcode Generator\bin\Debug\netcoreapp1.1\Random Passcode Generator.deps.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Random Passcode Generator\bin\Debug\netcoreapp1.1\Random Passcode Generator.runtimeconfig.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Random Passcode Generator\bin\Debug\netcoreapp1.1\Random Passcode Generator.runtimeconfig.dev.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Random Passcode Generator\bin\Debug\netcoreapp1.1\Random Passcode Generator.dll
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Random Passcode Generator\bin\Debug\netcoreapp1.1\Random Passcode Generator.pdb
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Random Passcode Generator\obj\Debug\netcoreapp1.1\Random Passcode Generator.csproj.CoreCompileInputs.cache
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Random Passcode Generator\obj\Debug\netcoreapp1.1\Random Passcode Generator.AssemblyInfo.cs
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Random Passcode Generator\obj\Debug\netcoreapp1.1\Random Passcode Generator.dll
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Random Passcode Generator\obj\Debug\netcoreapp1.1\Random Passcode Generator.pdb
