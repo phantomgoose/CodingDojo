@@ -50,22 +50,20 @@ namespace Dojodachi.Controllers
                 // random failure
                 if (r.Next(4) == 0)
                 {
-                    saveGame(game);
-                    checkState("Your Dojodachi did not like the food! Meals -1 :(");
+                    checkState(game, "Your Dojodachi did not like the food! Meals -1 :(");
                 }
                 else
                 {
                     game.fullness += ran_fullness;
-                    saveGame(game);
-                    checkState("You fed your Dojodachi! Meals -1, fullness +" + ran_fullness);
+                    checkState(game, "You fed your Dojodachi! Meals -1, fullness +" + ran_fullness);
                 }
 
             }
             else
             {
-                checkState("You don't have enough meals to feed your Dojodachi!");
+                checkState(game, "You don't have enough meals to feed your Dojodachi!");
             }
-            return Json(getGame());
+            return Json(game);
         }
 
         [HttpGet]
@@ -79,87 +77,91 @@ namespace Dojodachi.Controllers
             {
                 game.energy -= 5;
                 // random fail
-                if (r.Next(4) == 0) {
-                    saveGame(game);
-                    checkState("Your Dojodachi did not like playing with you! Energy -5 :(");
-                } else {
+                if (r.Next(4) == 0)
+                {
+                    checkState(game, "Your Dojodachi did not like playing with you! Energy -5 :(");
+                }
+                else
+                {
                     game.happiness += ran_happiness;
-                saveGame(game);
-                checkState("You played with your Dojodachi! Energy -5, happiness +" + ran_happiness);
+                    checkState(game, $"You played with your Dojodachi! Energy -5, happiness +{ran_happiness}");
                 }
             }
             else
             {
-                checkState("Your Dojodachi is too tired to play!");
+                checkState(game, "Your Dojodachi is too tired to play!");
             }
-            return Json(getGame());
+            return Json(game);
         }
 
         [HttpGet]
         [Route("work")]
-        public IActionResult work() {
+        public IActionResult work()
+        {
             Game game = getGame();
             Random r = new Random();
-            if (game.energy >= 5) {
+            if (game.energy >= 5)
+            {
                 game.energy -= 5;
-                int ran_meals = r.Next(1,4);
+                int ran_meals = r.Next(1, 4);
                 game.meals += ran_meals;
-                saveGame(game);
-                checkState("Your Dojodachi was very productive! Energy -5, meals +" + ran_meals);
-            } else {
-                checkState("Your Dojodachi is too tired to work :(");
+                checkState(game, $"Your Dojodachi was very productive! Energy -5, meals +{ran_meals}");
             }
-            return Json(getGame());
+            else
+            {
+                checkState(game, "Your Dojodachi is too tired to work :(");
+            }
+            return Json(game);
         }
 
         [HttpGet]
         [Route("sleep")]
-        public IActionResult sleep() {
+        public IActionResult sleep()
+        {
             Game game = getGame();
             game.energy += 15;
             game.fullness -= 5;
             game.happiness -= 5;
-            saveGame(game);
-            checkState("Your Dojodachi went to bed and woke up feeling refreshed, but grumpy. Energy +15, fullness -5, happiness -5.");
-            return Json(getGame());
+            checkState(game, "Your Dojodachi went to bed and woke up feeling refreshed, but grumpy. Energy +15, fullness -5, happiness -5.");
+            return Json(game);
         }
 
         [HttpGet]
         [Route("reset")]
-        public IActionResult reset() {
-            HttpContext.Session.SetObjectAsJson("game", new Game());
-            return Json(getGame());
+        public IActionResult reset()
+        {
+            Game game = new Game();
+            HttpContext.Session.SetObjectAsJson("game", game);
+            return Json(game);
         }
 
-        // checks game state and updates message accordingly
-        private void checkState(string custom_message)
+        // checks game state, updates message accordingly (on win/loss), and most importantly saves the game state to session
+        private void checkState(Game game, string custom_message)
         {
-            string message = "";
+            string message = custom_message;
             bool res = false;
-            Game game = getGame();
             // winning takes priority
-            if (isGameWon())
+            if (isGameWon(game))
             {
                 message = "Congratulations! You won!";
                 res = true;
             }
-            else if (isGameLost())
+            else if (isGameLost(game))
             {
                 message = "Your Dojodachi has passed away.";
                 res = true;
             }
-            else
-            {
-                message = custom_message;
-            }
-            game.message = message;
-            game.gameOver = res;
+            // totally unnecessary reflection here for practice purposes
+            updateValue(game, "message", message);
+            updateValue(game, "gameOver", res);
+            // game.message = message;
+            // game.gameOver = res;
             saveGame(game);
         }
 
-        private bool isGameWon()
+        private bool isGameWon(Game game)
         {
-            if (getGame().fullness >= 100 && getGame().happiness >= 100 && getGame().energy >= 100)
+            if (game.fullness >= 100 && game.happiness >= 100 && game.energy >= 100)
             {
                 return true;
             }
@@ -169,9 +171,9 @@ namespace Dojodachi.Controllers
             }
         }
 
-        private bool isGameLost()
+        private bool isGameLost(Game game)
         {
-            if (getGame().fullness <= 0 || getGame().happiness <= 0)
+            if (game.fullness <= 0 || game.happiness <= 0)
             {
                 return true;
             }
@@ -189,6 +191,11 @@ namespace Dojodachi.Controllers
         private void saveGame(Game game)
         {
             HttpContext.Session.SetObjectAsJson("game", game);
+        }
+
+        private void updateValue(Game game, string key, object value)
+        {
+            typeof(Game).GetField(key).SetValue(game, value);
         }
     }
 }
