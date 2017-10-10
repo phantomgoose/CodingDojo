@@ -1,0 +1,9 @@
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Dojodachi\bin\Debug\netcoreapp1.1\Dojodachi.deps.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Dojodachi\bin\Debug\netcoreapp1.1\Dojodachi.runtimeconfig.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Dojodachi\bin\Debug\netcoreapp1.1\Dojodachi.runtimeconfig.dev.json
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Dojodachi\bin\Debug\netcoreapp1.1\Dojodachi.dll
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Dojodachi\bin\Debug\netcoreapp1.1\Dojodachi.pdb
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Dojodachi\obj\Debug\netcoreapp1.1\Dojodachi.csproj.CoreCompileInputs.cache
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Dojodachi\obj\Debug\netcoreapp1.1\Dojodachi.AssemblyInfo.cs
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Dojodachi\obj\Debug\netcoreapp1.1\Dojodachi.dll
+D:\Dropbox\coding dojo\DojoAssignments\Completed assignments for git\C#\.Net Core\Dojodachi\obj\Debug\netcoreapp1.1\Dojodachi.pdb
