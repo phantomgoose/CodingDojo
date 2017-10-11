@@ -1,0 +1,28 @@
+@{
+    ViewData["Title"] = "Pokeman Info";
+}
+
+<p>Visit "/{pokemon_id} to view information about a pokemon"</p>
+
+@if (ViewBag.Pokeman != null) {
+    <p>Name: @ViewBag.Pokeman["name"]</p>
+    <p>Types:
+        <ul>
+            @foreach (var item in ViewBag.Pokeman["types"])
+            {
+                <li>@item["type"]["name"]</li>   
+            }
+        </ul>
+    </p>
+    <p>Height: @ViewBag.Pokeman["height"]</p>
+    <p>Weight: @ViewBag.Pokeman["weight"]</p>
+    <p>Pictures:
+        <ul>
+            @foreach (var item in ViewBag.Pokeman["sprites"]) {
+                @if(item.Value != null) {
+                    <li><img src="@item.Value"></img></li>
+                }
+            }
+        </ul>
+    </p>
+}

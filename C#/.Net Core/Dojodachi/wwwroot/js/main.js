@@ -8,6 +8,7 @@ $(document).ready(function() {
 
     function updateLoop() {
         setTimeout(function() {
+            // would be better to add some events for when these values actually change instead of updating everything every 200ms, but meh
             $("#message").html(global_state.message);
             if (global_state.gameOver) {
                 $(".btn-playing").hide();
@@ -27,7 +28,6 @@ $(document).ready(function() {
     $("#feed").click(function(e) {
         e.preventDefault();
         $.get("/feed", function(game) {
-            console.log(game);
             global_state = game;
         });
     });
@@ -35,7 +35,6 @@ $(document).ready(function() {
     $("#work").click(function(e) {
         e.preventDefault();
         $.get("/work", function(game) {
-            console.log(game);
             global_state = game;
         });
     });
@@ -43,7 +42,6 @@ $(document).ready(function() {
     $("#play").click(function(e) {
         e.preventDefault();
         $.get("/play", function(game) {
-            console.log(game);
             global_state = game;
         });
     });
@@ -51,7 +49,6 @@ $(document).ready(function() {
     $("#sleep").click(function(e) {
         e.preventDefault();
         $.get("/sleep", function(game) {
-            console.log(game);
             global_state = game;
         });
     });
@@ -59,7 +56,6 @@ $(document).ready(function() {
     $("#reset").click(function(e) {
         e.preventDefault();
         $.get("/reset", function(game) {
-            console.log(game);
             global_state = game;
         });
     });

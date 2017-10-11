@@ -1,0 +1,13 @@
+@{
+    ViewData["Title"] = "QuotingDojo";
+}
+<h2>Here are the awesome quotes!</h2>
+
+@if(ViewBag.Quotes != null) {
+    @foreach (Dictionary<string, object> item in ViewBag.Quotes)
+    {
+            <p class="quote">"@item["quote"]"</p>
+            <p class="name">- @item["name"] at @(((DateTime)item["created_at"]).ToString("h:mmtt MMMM d yyyy"))</p>
+            <hr>
+    }
+}
