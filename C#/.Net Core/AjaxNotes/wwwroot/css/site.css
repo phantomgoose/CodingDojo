@@ -1,0 +1,4 @@
+.description, .update-description {
+    width: 500px;
+    overflow: auto;
+}

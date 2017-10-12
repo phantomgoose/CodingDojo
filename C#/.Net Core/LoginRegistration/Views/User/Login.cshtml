@@ -1,0 +1,13 @@
+@model LoginRegistration.Models.LoginViewModel
+
+<form asp-controller="User" asp-action="Login" method="post">
+    <span asp-validation-for="LoginEmail"></span>
+    <label asp-for="LoginEmail">Email:</label>
+    <input asp-for="LoginEmail">
+    <br>
+    <span asp-validation-for="LoginPassword"></span>
+    <label asp-for="LoginPassword">Password:</label>
+    <input asp-for="LoginPassword" type="password">
+    <br>
+    <input type="submit" value="Login">
+</form>

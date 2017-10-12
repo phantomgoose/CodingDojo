@@ -1,0 +1,8 @@
+@using LoginRegistration.Models
+@{
+    ViewData["Title"] = "Login and Registration";
+}
+<h1>Registration:</h1>
+@Html.Partial("Register", (RegisterViewModel)@ViewBag.RegisterViewModel)
+<h1>Login:</h1>
+@Html.Partial("Login")

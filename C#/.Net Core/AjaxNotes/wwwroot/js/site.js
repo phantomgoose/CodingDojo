@@ -38,7 +38,7 @@ $(document).ready(function() {
             $(
                 `<form class='update-note' action='/notes/${this.parentElement.getAttribute(
                     "data-value"
-                )}' method='patch'><input class='description' type='text' value='${this
+                )}' method='patch'><input class='update-description' type='text' value='${this
                     .innerHTML}' name='description'></form>`
             )
         );

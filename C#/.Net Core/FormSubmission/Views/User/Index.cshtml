@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h4>Enter your information</h4>
+<form action="/" method="post">
+    First Name <input type="text" name="first_name">
+    Last Name <input type="text" name="last_name">
+    Age <input type="number" min="1" step="1" name="age">
+    Email <input type="text" name="email">
+    Password <input type="password" name="password">
+    <input type="Submit">
+</form>
+@if(ViewBag.Valid != null && ViewBag.Valid != true) {
+    foreach(var error in ViewBag.ValidationErrors)
+    {
+        if(@error.Errors.Count > 0)
+        {
+            <p>@error.Errors[0].ErrorMessage</p>
+        }
+    }
+}

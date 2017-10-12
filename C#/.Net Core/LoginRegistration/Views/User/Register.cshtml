@@ -1,0 +1,25 @@
+@model LoginRegistration.Models.RegisterViewModel
+
+<form asp-controller="User" asp-action="Register" method="post">
+    <span asp-validation-for="FirstName"></span>
+    <label asp-for="FirstName">First name:</label>
+    <input asp-for="FirstName">
+    <br>
+    <span asp-validation-for="LastName"></span>
+    <label asp-for="LastName">Last name:</label>
+    <input asp-for="LastName">
+    <br>
+    <span asp-validation-for="Email"></span>
+    <label asp-for="Email">Email:</label>
+    <input asp-for="Email">
+    <br>
+    <span asp-validation-for="Password"></span>
+    <label asp-for="Password">Password:</label>
+    <input asp-for="Password" type="password">
+    <br>
+    <span asp-validation-for="PasswordConfirmation"></span>
+    <label asp-for="PasswordConfirmation">Password confirmation:</label>
+    <input asp-for="PasswordConfirmation" type="password">
+    <br>
+    <input type="submit" value="Register">
+</form>
