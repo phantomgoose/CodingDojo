@@ -1,0 +1,10 @@
+@using DojoLeague.Models
+@{
+    ViewData["Title"] = "Dojo League - Dojos";
+}
+<div class="dojos">
+    @Html.Partial("_DojoList.cshtml")
+</div>
+<div class="registration">
+    @Html.Partial("_DojoRegistration.cshtml", (DojoVM)@ViewBag.DojoVM)
+</div>

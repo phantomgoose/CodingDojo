@@ -1,0 +1,20 @@
+@model DojoLeague.Models.DojoVM
+<h1>Register A Dojo</h1>
+<form asp-controller="Dojo" asp-action="CreateDojo" method="post">
+    <div class="input-field">
+        <span class="error" asp-validation-for="name"></span>
+        <label asp-for="name">Dojo Name:</label>        
+        <input asp-for="name">
+    </div>
+    <div class="input-field">
+        <span class="error" asp-validation-for="location"></span>
+        <label asp-for="location">Dojo Location:</label>        
+        <input asp-for="location">
+    </div>
+    <div class="input-field">
+        <span class="error" asp-validation-for="information"></span>
+        <label asp-for="information">Additional Dojo Information:</label>        
+        <textarea asp-for="information" cols="30" rows="10"></textarea>
+    </div>
+    <input class="input-field" type="submit" value="Add">
+</form>

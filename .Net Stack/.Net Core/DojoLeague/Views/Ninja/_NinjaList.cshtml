@@ -1,0 +1,17 @@
+<h1>Registered Ninjas</h1>
+<table>
+    <tr>
+        <th>Ninja Name</th>
+        <th>Home Dojo</th>
+    </tr>
+    @foreach (var ninja in ViewBag.RegisteredNinjas){
+        <tr>
+            <td>@ninja.name</td>
+            @if (@ninja.dojo != null) {
+                <td>@ninja.dojo.name</td>
+            } else {
+                <td>Rogue</td>
+            }
+        </tr>
+    }
+</table>

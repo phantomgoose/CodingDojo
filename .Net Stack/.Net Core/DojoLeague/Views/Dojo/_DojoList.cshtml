@@ -1,0 +1,11 @@
+<h1>All Dojos</h1>
+<table>
+    <tr>
+        <th>Dojo Name</th>
+    </tr>
+    @foreach (var dojo in ViewBag.RegisteredDojos){
+        <tr>
+            <td>@dojo.name</td>
+        </tr>
+    }
+</table>

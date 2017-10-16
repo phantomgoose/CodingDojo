@@ -1,0 +1,34 @@
+@model DojoLeague.Models.NinjaVM
+<h1>Register A Ninja</h1>
+<form asp-controller="Ninja" asp-action="CreateNinja" method="post">
+    <div class="input-field">
+        <span class="error" asp-validation-for="name"></span>
+        <label asp-for="name">Ninja Name:</label>        
+        <input asp-for="name">
+    </div>
+    <div class="input-field">
+        <span class="error" asp-validation-for="level"></span>
+        <label asp-for="level">Ninjaing Level (1-10):</label>        
+        <select asp-for="level">
+            @for (int i = 1; i <= 10; i++) {
+                <option value="@i">@i</option>
+            }
+        </select>
+    </div>
+    <div class="input-field">
+        <span class="error" asp-validation-for="dojo_id"></span>
+        <label asp-for="dojo_id">Assigned Dojo:</label>        
+        <select asp-for="dojo_id">
+            <option value="0">Rogue</option>
+            @foreach (var dojo in ViewBag.RegisteredDojos) {
+                <option value="@dojo.id">@dojo.name</option>
+            }
+        </select>
+    </div>
+    <div class="input-field">
+        <span class="error" asp-validation-for="description"></span>
+        <label asp-for="description">Optional Description:</label>        
+        <input asp-for="description">
+    </div>
+    <input class="input-field" type="submit" value="Add">
+</form>

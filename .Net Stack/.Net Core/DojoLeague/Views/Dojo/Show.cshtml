@@ -1,0 +1,40 @@
+@model DojoLeague.Models.Dojo
+@{
+    ViewData["Title"] = "Dojo League - Dojo";
+}
+<header>
+    <h1>@Model.name</h1>
+    <p>Dojo location - @Model.location</p>
+    <p>Information - @Model.information</p>
+</header>
+<main>
+    <div class="members">
+        <h1>Current Members</h1>
+        <table>
+            <tr>
+                <th>Ninja</th>
+                <th>Action</th>
+            </tr>
+            @foreach (var ninja in @Model.ninjas) {
+                <tr>
+                    <td>
+                        @ninja.name
+                    </td>
+                    <td>
+                        Banish!
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="rogues">
+        <h1>Rogue Ninjas</h1>
+        <table>
+            <tr>
+                <th>Ninja</th>
+                <th>Action</th>
+            </tr>
+            @foreach (var ninja in )
+        </table>
+    </div>
+</main>
