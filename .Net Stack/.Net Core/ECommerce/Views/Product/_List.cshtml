@@ -1,0 +1,18 @@
+@using ECommerce.Models
+@model List<Product>
+@foreach (var product in Model) {
+    <div class="product">
+        <div class="product-img">
+            <img src="@product.img_url" alt="@product.name">
+        </div>
+        <div class="product-info">
+            <p>@product.name</p>
+            <p>(@product.quantity left)</p>
+        </div>
+    </div>
+}
+@if (ViewBag.EnableShowMore != null && ViewBag.EnableShowMore) {
+    <footer>
+        <a asp-controller="Product" asp-action="ShowAll">show more...</a>
+    </footer>
+}

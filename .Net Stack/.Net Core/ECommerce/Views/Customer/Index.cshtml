@@ -1,0 +1,18 @@
+@using ECommerce.Models
+@model List<Customer>
+@{
+    ViewData["Title"] = "Store | Customers";
+}
+@Html.Partial("~/Views/Shared/_Nav.cshtml")
+<h1>Customers~</h1>
+<aside>
+    @Html.Partial("_Create", (CustomerVM)ViewBag.CustomerVM)
+</aside>
+<main>
+    <form asp-controller="Customer" asp-action="Index" method="get">
+        <input type="text" name="search" placeholder="Name...">
+        <input type="submit" value="Filter">
+    </form>
+    <button onclick="location.href='@Url.Action("Index", "Customer")'">Reset filter</button>
+    @Html.Partial("_List", Model)
+</main>

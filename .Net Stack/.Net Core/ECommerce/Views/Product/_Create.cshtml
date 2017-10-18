@@ -1,0 +1,27 @@
+@model ECommerce.Models.ProductVM
+<h4>Add a new product</h4>
+<form asp-controller="Product" asp-action="CreateProduct" method="post">
+    <div class="input-field">
+        <span class="error" asp-validation-for="name"></span>
+        <label asp-for="name">Name:</label>
+        <input asp-for="name" placeholder="name...">
+    </div>
+    <div class="input-field">
+        <span class="error" asp-validation-for="img_url"></span>
+        <label asp-for="img_url">Image URL:</label>
+        <input asp-for="img_url" placeholder="http://">
+    </div>
+    <div class="input-field">
+        <span class="error" asp-validation-for="description"></span>
+        <label asp-for="description">Description:</label>
+        <input asp-for="description">
+    </div>
+    <div class="input-field">
+        <span class="error" asp-validation-for="quantity"></span>
+        <label asp-for="quantity">Quantity:</label>
+        <input asp-for="quantity" type="number" min="1" step="1" value="1">
+    </div>
+    <div class="input-field">
+        <input type="submit" value="Add">
+    </div>
+</form> 

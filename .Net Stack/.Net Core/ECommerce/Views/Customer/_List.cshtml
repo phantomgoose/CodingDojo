@@ -1,0 +1,18 @@
+@using ECommerce.Models
+@model List<Customer>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Created Date</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var customer in Model) {
+        <tr>
+            <td>@customer.name</td>
+            <td>@customer.created_at.ToString("MMMM d, yyyy")</td>
+            <td>
+                <a class="btn btn-danger" asp-controller="Customer" asp-action="DeleteCustomer" asp-route-id="@customer.id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,85 @@
+.error {
+    color: red;
+    display: block;
+}
+
+.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+aside {
+    width: 25%;
+    min-width: 7em;
+}
+
+main {
+    width: 70%;
+}
+
+aside, main {
+    display: inline-block;
+    vertical-align: top;
+    margin: 1%;
+    padding: 1%;
+}
+
+.product {
+    margin: 1%;
+    width: 9em;
+    height: 9em;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.product-info p {
+    overflow-wrap: break-word;
+    margin: 0;
+}
+
+.product-info {
+    vertical-align: bottom;
+    height: 50%;
+    text-align: -webkit-center;
+}
+
+.product-img {
+    height: 50%;
+    text-align: center;
+}
+
+.product-img img {
+    height: 100%;
+}
+
+.input-field * {
+    display: block;
+    margin: 1% 0 1% 0;
+}
+
+input {
+    width: 100%;
+}
+
+h4 {
+    text-decoration: underline;
+    display: table-cell;
+    vertical-align: top;
+}
+
+table tr td, table tr th {
+    padding: .25em;
+    border-right: thick solid black;
+}
+
+table {
+    border: thick solid black;
+}
+
+table tr th {
+    background: darkgray;
+}
+
+table tr:nth-child(even) {
+    background: rgba(211, 211, 211, 0.493);
+}

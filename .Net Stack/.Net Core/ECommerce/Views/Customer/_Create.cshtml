@@ -1,0 +1,12 @@
+@model ECommerce.Models.CustomerVM
+<h4>Add a new customer</h4>
+<form asp-controller="Customer" asp-action="CreateCustomer" method="post">
+    <div class="input-field">
+        <span class="error" asp-validation-for="name"></span>
+        <label asp-for="name">Name:</label>
+        <input asp-for="name" placeholder="name...">
+    </div>
+    <div class="input-field">
+        <input type="submit" value="Add">
+    </div>
+</form> 

@@ -1,0 +1,13 @@
+@using ECommerce.Models
+@model List<Product>
+@{
+    ViewData["Title"] = "Store | Product";
+}
+@Html.Partial("~/Views/Shared/_Nav.cshtml")
+<h1>products~</h1>
+<aside>
+    @Html.Partial("_Create", (ProductVM)ViewBag.ProductVM)
+</aside>
+<main>
+    @Html.Partial("_List", Model)
+</main>
