@@ -1,0 +1,31 @@
+@model ECommerce.Models.OrderVM
+<h4>Add a new order</h4>
+<form asp-action="Index" asp-controller="Order" method="post">
+    <div class="error" asp-validation-summary="ModelOnly"></div>
+    <div class="input-field">
+        <span class="error" asp-validation-for="productid"></span>
+        <label asp-for="productid">Product:</label>
+        <select asp-for="productid">
+            @foreach (var product in Model.products){
+                <option value=@product.id>@product.name</option>
+            }
+        </select>
+    </div>
+    <div class="input-field">
+        <span class="error" asp-validation-for="customerid"></span>
+        <label asp-for="customerid">Customer:</label>
+        <select asp-for="customerid">
+            @foreach (var customer in Model.customers){
+                <option value=@customer.id>@customer.name</option>
+            }
+        </select>
+    </div>
+    <div class="input-field">
+        <span class="error" asp-validation-for="quantity"></span>
+        <label asp-for="quantity">Quantity:</label>
+        <input asp-for="quantity" type="number" min="1" step="1" value="1">
+    </div>
+    <div class="input-field">
+        <input type="submit" value="Add">
+    </div>
+</form>

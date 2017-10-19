@@ -1,0 +1,9 @@
+@using ECommerce.Models
+@model List<Order>
+<table>
+    @foreach (var order in Model) {
+        <tr>
+            <td>@order.customer.name ordered a(n) @order.product.name</td>
+        </tr>
+    }
+</table>

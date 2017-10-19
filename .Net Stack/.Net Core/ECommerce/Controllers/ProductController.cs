@@ -10,6 +10,7 @@ namespace ECommerce.Controllers
     public class ProductController : Controller
     {
         private readonly ECommerceContext _context;
+        // need to rewrite this, since this type of "caching" doesn't work because the controller is torn down between requests. Oopsie.
         private List<Product> _top15Products;
         private bool _enableShowMore = false;
 
