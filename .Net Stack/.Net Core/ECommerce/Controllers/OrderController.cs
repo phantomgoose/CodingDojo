@@ -27,14 +27,15 @@ namespace ECommerce.Controllers {
                 orders = _context.Orders
                 .Include(o => o.product)
                 .Include(o => o.customer)
-                .Where(o => o.customer.name.Contains(search)
-                || o.product.name.Contains(search)
-                || o.quantity.ToString().Contains(search))
+                .Where(o => o.customer.name.ToUpper().Contains(search.ToUpper())
+                || o.product.name.ToUpper().Contains(search.ToUpper()))
+                .OrderByDescending(p => p.created_at)
                 .ToList();
             } else {
                 orders = _context.Orders
                 .Include(o => o.product)
                 .Include(o => o.customer)
+                .OrderByDescending(p => p.created_at)
                 .ToList();
             }
             ViewBag.OrderVM = new OrderVM {

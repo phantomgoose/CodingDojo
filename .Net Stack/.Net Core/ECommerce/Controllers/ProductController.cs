@@ -20,12 +20,18 @@ namespace ECommerce.Controllers
         }
 
         [HttpGet]
-        [Route("products")]
-        public IActionResult Index()
+        [Route("products/{search?}")]
+        public IActionResult Index(string search)
         {
+            var products = _top15Products;
+            bool _enableShowMore = true;
+            if (!String.IsNullOrEmpty(search)) {
+                products = _context.Products.Where(p => p.name.ToUpper().Contains(search.ToUpper())).ToList();
+                _enableShowMore = false;
+            }
             ViewBag.ProductVM = new ProductVM();
             ViewBag.EnableShowMore = _enableShowMore;
-            return View(_top15Products);
+            return View(products);
         }
 
         [HttpPost]

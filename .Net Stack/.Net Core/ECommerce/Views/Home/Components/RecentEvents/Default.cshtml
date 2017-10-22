@@ -1,0 +1,34 @@
+@using System
+@model ECommerce.ViewComponents.RecentEventsViewModel
+
+<h4>Recently Added Products</h4>
+@foreach (var product in Model.recentProducts) {
+    <div class="product">
+        <div class="product-img">
+            <img src="@product.img_url" alt="@product.name">
+        </div>
+        <div class="product-info">
+            <p>@product.name</p>
+            <p>(@product.quantity left)</p>
+        </div>
+    </div>
+}
+<p>
+    <a asp-action="Index" asp-controller="Product">show all products...</a>
+</p>
+
+<h4>Recent Orders</h4>
+@foreach (var order in Model.recentOrders) {
+    <p>@order.product.name (count: @order.quantity) purchased by @order.customer.name @Model.DateDiff(order.created_at) ago.</p>
+}
+<p>
+    <a asp-action="Index" asp-controller="Order">show all orders...</a>
+</p>
+
+<h4>New Customers</h4>
+@foreach (var customer in Model.newCustomers) {
+    <p>@customer.name joined the store @Model.DateDiff(customer.created_at) ago.</p>
+}
+<p>
+    <a asp-action="Index" asp-controller="Customer">show all customers...</a>
+</p>

@@ -57,7 +57,7 @@ aside, main {
     margin: 1% 0 1% 0;
 }
 
-input {
+.input-field input {
     width: 100%;
 }
 

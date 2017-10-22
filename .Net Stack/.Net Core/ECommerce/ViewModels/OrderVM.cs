@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using ECommerce.Extensions;
 
 namespace ECommerce.Models {
+    [EnsureValidQuantity]
     [EnsureValidIdAttributes] // or something went horribly wrong somewhere
     public class OrderVM {
 
@@ -19,7 +20,7 @@ namespace ECommerce.Models {
         public int customerid {get; set;}
         
         [Required(ErrorMessage = idQuantityError)]
-        [Range(1, int.MaxValue, ErrorMessage = idQuantityError)]
+        // range is validated via EnsureValidQuantity
         public int quantity {get; set;}
 
         public List<Customer> customers {get; set;}

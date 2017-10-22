@@ -4,8 +4,13 @@
     ViewData["Title"] = "Store | Product";
 }
 @Html.Partial("~/Views/Shared/_Nav.cshtml")
-<h1>products~</h1>
+<h1>Products</h1>
 <aside>
+    <form asp-controller="Product" asp-action="Index" method="get">
+        <input type="text" name="search" placeholder="Filter...">
+        <input type="submit" value="Go">
+    </form>
+    <button onclick="location.href='@Url.Action("Index", "Product")'">Reset filter</button>
     @Html.Partial("_Create", (ProductVM)ViewBag.ProductVM)
 </aside>
 <main>

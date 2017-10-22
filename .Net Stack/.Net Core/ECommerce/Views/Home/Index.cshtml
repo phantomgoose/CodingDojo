@@ -2,4 +2,14 @@
     ViewData["Title"] = "Store | Home";
 }
 @Html.Partial("~/Views/Shared/_Nav.cshtml")
-<h1>Home~</h1>
+<h1>Home</h1>
+<aside>
+    <form asp-controller="Home" asp-action="Index" method="get">
+        <input type="text" name="search" placeholder="Filter">
+        <input type="submit" value="Go">
+    </form>
+    <button onclick="location.href='@Url.Action("Index", "Home")'">Reset filter</button>
+</aside>
+<main>
+    @await Component.InvokeAsync("RecentEvents", ViewBag.search)
+</main>
