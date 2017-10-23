@@ -15,8 +15,8 @@ namespace ECommerce.Controllers {
 
         public OrderController(ECommerceContext context) {
             _context = context;
-            _allCustomers = _context.Customers.ToList();
-            _allProducts = _context.Products.ToList();
+            _allCustomers = _context.Customers.OrderBy(c => c.created_at).ToList();
+            _allProducts = _context.Products.OrderBy(p => p.created_at).ToList();
         }
 
         [HttpGet]
@@ -53,12 +53,16 @@ namespace ECommerce.Controllers {
                 Order order = new Order {
                     customerid = model.customerid,
                     productid = model.productid,
-                    // add "out of stock" check for quantity
                     quantity = model.quantity,
                     created_at = DateTime.UtcNow,
                     updated_at = DateTime.UtcNow
                 };
                 _context.Orders.Add(order);
+                // update stock
+                Product product = _context.Products.Find(model.productid);
+                if (product != null) {
+                    product.quantity -= model.quantity;
+                }
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
