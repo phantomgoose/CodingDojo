@@ -14,7 +14,7 @@
     </div>
 }
 <p>
-    <a asp-action="Index" asp-controller="Product">show all products...</a>
+    <a asp-action="Index" asp-controller="Product">show more products...</a>
 </p>
 
 <h4>Recent Orders</h4>
@@ -22,7 +22,7 @@
     <p>@order.product.name (count: @order.quantity) purchased by @order.customer.name @Model.DateDiff(order.created_at) ago.</p>
 }
 <p>
-    <a asp-action="Index" asp-controller="Order">show all orders...</a>
+    <a asp-action="Index" asp-controller="Order">show more orders...</a>
 </p>
 
 <h4>New Customers</h4>
@@ -30,5 +30,5 @@
     <p>@customer.name joined the store @Model.DateDiff(customer.created_at) ago.</p>
 }
 <p>
-    <a asp-action="Index" asp-controller="Customer">show all customers...</a>
+    <a asp-action="Index" asp-controller="Customer">show more customers...</a>
 </p>

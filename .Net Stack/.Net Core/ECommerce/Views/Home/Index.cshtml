@@ -11,5 +11,8 @@
     <button onclick="location.href='@Url.Action("Index", "Home")'">Reset filter</button>
 </aside>
 <main>
+    @if (ViewBag.search != null) {
+        <p>Searching for "@ViewBag.search"</p>
+    }
     @await Component.InvokeAsync("RecentEvents", ViewBag.search)
 </main>
