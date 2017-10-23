@@ -4,7 +4,7 @@ namespace ECommerce.Models {
     public class ProductVM {
         
         private const string nameError = "Product name must be at least 2 characters long.";
-        private const string urlError = "Please enter a valid url";
+        private const string urlError = "Please enter a valid image url (must have valid image extension)";
         private const string descriptionError = "Description must be at least 2 characters long.";
         private const string quantityError = "Quantity cannot be less than 1.";
 
