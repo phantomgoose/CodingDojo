@@ -1,6 +1,6 @@
 using System;
-using ECommerce.Models;
 using System.ComponentModel.DataAnnotations;
+using ECommerce.Models;
 
 namespace ECommerce.Extensions {
     [AttributeUsage(AttributeTargets.Class)]

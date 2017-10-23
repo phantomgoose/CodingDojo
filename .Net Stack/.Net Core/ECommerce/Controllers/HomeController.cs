@@ -1,7 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using ECommerce.Models;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace ECommerce.Controllers
 {

@@ -3,8 +3,8 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using ECommerce.Models;
 using Microsoft.EntityFrameworkCore;
+using ECommerce.Models;
 
 // ViewComponent and async practice
 namespace ECommerce.ViewComponents {
